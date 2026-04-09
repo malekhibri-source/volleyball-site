@@ -10,7 +10,7 @@
   <main class="app-shell">
     <header class="app-header">
       <div class="header-content">
-        <h1>Session Tracker</h1>
+        <h1><span>Volley</span>Track</h1>
         <p class="app-subtitle">Train daily. Track smarter.</p>
       </div>
       <div class="volleyball-gallery">
@@ -22,7 +22,7 @@
     </header>
 
     <section id="session-form-section" aria-labelledby="session-form-title">
-      <h2 id="session-form-title">Session Form</h2>
+      <h2>📝 Session Form</h2>
       <p id="form-status-message" role="status" aria-live="polite" class="form-status-message">
         Ready. Add your first session.
       </p>
@@ -32,8 +32,11 @@
           <input type="date" id="session-date" name="date" required />
         </div>
 
-        <div class="field-row">
-          <label for="serve-attempts">Serve Attempts</label>
+        <div class="field-row-with-img">
+          <div class="field-img-label">
+            <img src="vb-serve.svg" alt="Serve" />
+            <label for="serve-attempts">Serve Attempts</label>
+          </div>
           <input type="number" id="serve-attempts" name="serveAttempts" min="0" step="1" required />
         </div>
 
@@ -49,18 +52,24 @@
           </select>
         </div>
 
-        <div class="field-row">
-          <label for="aces-count">Aces</label>
+        <div class="field-row-with-img">
+          <div class="field-img-label">
+            <img src="vb-ball.svg" alt="Aces" />
+            <label for="aces-count">Aces</label>
+          </div>
           <input type="number" id="aces-count" name="acesCount" min="0" step="1" value="0" required />
         </div>
 
         <div class="field-row">
-          <label for="serve-made">Serves Made</label>
+          <label for="serve-made">Serves In</label>
           <input type="number" id="serve-made" name="serveMade" min="0" step="1" required />
         </div>
 
-        <div class="field-row">
-          <label for="spike-attempts">Spike Attempts</label>
+        <div class="field-row-with-img">
+          <div class="field-img-label">
+            <img src="vb-spike.svg" alt="Spike" />
+            <label for="spike-attempts">Spike Attempts</label>
+          </div>
           <input type="number" id="spike-attempts" name="spikeAttempts" min="0" step="1" required />
         </div>
 
@@ -69,24 +78,40 @@
           <input type="number" id="spike-made" name="spikeMade" min="0" step="1" required />
         </div>
 
-        <div class="field-row">
-          <label for="sets-given">Sets Given</label>
-          <input type="number" id="sets-given" name="setsGiven" min="0" step="1" required />
+        <div class="field-row-with-img">
+          <div class="field-img-label">
+            <img src="vb-net.svg" alt="Pass" />
+            <label for="passes-received">Passes Received</label>
+          </div>
+          <input type="number" id="passes-received" name="passesReceived" min="0" step="1" value="0" required />
         </div>
 
         <div class="field-row">
-          <label for="sets-tipped">Sets Tipped</label>
-          <input type="number" id="sets-tipped" name="setsTipped" min="0" step="1" required />
+          <label for="passes-well">Passes Well (Good/Perfect)</label>
+          <input type="number" id="passes-well" name="passesWell" min="0" step="1" value="0" required />
+        </div>
+
+        <div class="field-row-with-img">
+          <div class="field-img-label">
+            <img src="vb-net.svg" alt="Sets" />
+            <label for="sets-given">Sets Given</label>
+          </div>
+          <input type="number" id="sets-given" name="setsGiven" min="0" step="1" value="0" required />
         </div>
 
         <div class="field-row">
-          <label for="sets-hit">Sets Hit</label>
-          <input type="number" id="sets-hit" name="setsHit" min="0" step="1" required />
+          <label for="sets-tipped">Sets Tipped (blocked)</label>
+          <input type="number" id="sets-tipped" name="setsTipped" min="0" step="1" value="0" required />
+        </div>
+
+        <div class="field-row">
+          <label for="sets-hit">Sets Hit (kill)</label>
+          <input type="number" id="sets-hit" name="setsHit" min="0" step="1" value="0" required />
         </div>
 
         <div class="field-row">
           <label for="points-won">Points Won</label>
-          <input type="number" id="points-won" name="pointsWon" min="0" step="1" required />
+          <input type="number" id="points-won" name="pointsWon" min="0" step="1" value="0" required />
         </div>
 
         <button type="submit">Save Session</button>
@@ -94,7 +119,7 @@
     </section>
 
     <section id="summary-section" aria-labelledby="summary-title">
-      <h2 id="summary-title">Summary</h2>
+      <h2>📊 Summary</h2>
       <div class="summary-cards">
         <article class="summary-card" id="serve-percent-card">
           <h3>Serve %</h3>
@@ -111,15 +136,95 @@
           <p id="spike-percent-value">0%</p>
         </article>
 
-        <article class="summary-card" id="totals-card">
-          <h3>Totals</h3>
-          <p id="totals-value">0 sessions</p>
+        <article class="summary-card" id="pass-percent-card">
+          <h3>Pass %</h3>
+          <p id="pass-percent-value">0%</p>
         </article>
+      </div>
+      <div style="margin-top: 1rem; text-align: center;">
+        <p id="totals-value" style="color: var(--text-muted); font-size: 0.9rem;">0 sessions</p>
+      </div>
+    </section>
+
+    <section id="serve-compare-section" aria-labelledby="serve-compare-title">
+      <h2>🎯 Find Your Game Serve</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+        Compare two serve types: do 10 of each, mark the result, and get a recommendation.
+      </p>
+      <div class="serve-compare-grid">
+        <div class="serve-option" id="serve-a">
+          <h3>
+            <select id="serve-type-a">
+              <option value="">Select serve</option>
+              <option value="float">Float</option>
+              <option value="jump-float">Jump Float</option>
+              <option value="jump-topspin">Jump Topspin</option>
+              <option value="underhand">Underhand</option>
+              <option value="overhand">Overhand</option>
+            </select>
+          </h3>
+          <div class="attempt-row" id="attempts-a">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            <button type="button" class="attempt-btn" data-index="0">-</button>
+            <button type="button" class="attempt-btn" data-index="1">-</button>
+            <button type="button" class="attempt-btn" data-index="2">-</button>
+            <button type="button" class="attempt-btn" data-index="3">-</button>
+            <button type="button" class="attempt-btn" data-index="4">-</button>
+          </div>
+          <div class="attempt-row">
+            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+            <button type="button" class="attempt-btn" data-index="5">-</button>
+            <button type="button" class="attempt-btn" data-index="6">-</button>
+            <button type="button" class="attempt-btn" data-index="7">-</button>
+            <button type="button" class="attempt-btn" data-index="8">-</button>
+            <button type="button" class="attempt-btn" data-index="9">-</button>
+          </div>
+          <div class="serve-score-display" id="score-a">
+            Score: <span class="score">0</span>
+          </div>
+        </div>
+
+        <div class="serve-option" id="serve-b">
+          <h3>
+            <select id="serve-type-b">
+              <option value="">Select serve</option>
+              <option value="float">Float</option>
+              <option value="jump-float">Jump Float</option>
+              <option value="jump-topspin">Jump Topspin</option>
+              <option value="underhand">Underhand</option>
+              <option value="overhand">Overhand</option>
+            </select>
+          </h3>
+          <div class="attempt-row" id="attempts-b">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            <button type="button" class="attempt-btn" data-index="0">-</button>
+            <button type="button" class="attempt-btn" data-index="1">-</button>
+            <button type="button" class="attempt-btn" data-index="2">-</button>
+            <button type="button" class="attempt-btn" data-index="3">-</button>
+            <button type="button" class="attempt-btn" data-index="4">-</button>
+          </div>
+          <div class="attempt-row">
+            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+            <button type="button" class="attempt-btn" data-index="5">-</button>
+            <button type="button" class="attempt-btn" data-index="6">-</button>
+            <button type="button" class="attempt-btn" data-index="7">-</button>
+            <button type="button" class="attempt-btn" data-index="8">-</button>
+            <button type="button" class="attempt-btn" data-index="9">-</button>
+          </div>
+          <div class="serve-score-display" id="score-b">
+            Score: <span class="score">0</span>
+          </div>
+        </div>
+
+        <div class="compare-result" id="compare-result" style="display: none;">
+          <div class="winner" id="winner-text">Select both serve types and record attempts</div>
+          <div class="score-diff" id="score-diff"></div>
+        </div>
       </div>
     </section>
 
     <section id="session-history-section" aria-labelledby="session-history-title">
-      <h2 id="session-history-title">Session History</h2>
+      <h2>📜 Session History</h2>
       <div class="history-container">
         <ul id="session-history-list">
           <li class="history-empty">No sessions recorded yet.</li>
@@ -128,7 +233,7 @@
     </section>
 
     <section id="chart-section" aria-labelledby="chart-title">
-      <h2 id="chart-title">Performance Chart</h2>
+      <h2>📈 Performance Chart</h2>
       <div class="chart-container">
         <canvas id="performance-chart" aria-label="Serve and spike performance by session"></canvas>
       </div>
