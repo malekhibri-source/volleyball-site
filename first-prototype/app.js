@@ -1,1 +1,248 @@
-믯⢿畦据楴湯⠠ ੻†產敳猠牴捩≴਻ 挠湯瑳匠佔䅒䕇䭟奅㴠∠潶汬祥慢汬猭獥楳湯≳਻ 挠湯瑳映牯⁭‽潤畣敭瑮朮瑥汅浥湥䉴䥹⡤猢獥楳湯昭牯≭㬩 挠湯瑳猠牥敶敐捲湥䕴⁬‽潤畣敭瑮朮瑥汅浥湥䉴䥹⡤猢牥敶瀭牥散瑮瘭污敵⤢਻†潣獮⁴灳歩健牥散瑮汅㴠搠捯浵湥⹴敧䕴敬敭瑮祂摉∨灳歩ⵥ数捲湥⵴慶畬≥㬩 挠湯瑳琠瑯污䕳⁬‽潤畣敭瑮朮瑥汅浥湥䉴䥹⡤琢瑯污⵳慶畬≥㬩 挠湯瑳映牯卭慴畴䕳⁬‽潤畣敭瑮朮瑥汅浥湥䉴䥹⡤昢牯⵭瑳瑡獵洭獥慳敧⤢਻†潣獮⁴楨瑳牯䱹獩䕴⁬‽潤畣敭瑮朮瑥汅浥湥䉴䥹⡤猢獥楳湯栭獩潴祲氭獩≴㬩 挠湯瑳挠慨瑲慃癮獡㴠搠捯浵湥⹴敧䕴敬敭瑮祂摉∨数晲牯慭据ⵥ档牡≴㬩 挠湯瑳渠浵牥捩湉異獴㴠䄠牲祡昮潲⡭潦浲焮敵祲敓敬瑣牯汁⡬椧灮瑵瑛灹㵥渢浵敢≲❝⤩਻ 氠瑥猠獥楳湯⁳‽潬摡敓獳潩獮⤨਻†敲摮牥慄桳潢牡⡤㬩ਊ†潦浲愮摤癅湥䱴獩整敮⡲猢扵業≴‬慨摮敬畓浢瑩㬩 渠浵牥捩湉異獴昮牯慅档昨湵瑣潩⁮椨灮瑵 ੻††湩異⹴摡䕤敶瑮楌瑳湥牥∨湩異≴‬慨摮敬畎敭楲䥣灮瑵㬩 素㬩 栠獩潴祲楌瑳汅愮摤癅湥䱴獩整敮⡲挢楬正Ⱒ栠湡汤䡥獩潴祲汃捩⥫਻†楷摮睯愮摤癅湥䱴獩整敮⡲爢獥穩≥‬牤睡桃牡⥴਻ 映湵瑣潩⁮慨摮敬畓浢瑩攨敶瑮 ੻††癥湥⹴牰癥湥䑴晥畡瑬⤨਻ †挠湯瑳瀠牡敳敒畳瑬㴠瀠牡敳敓獳潩䙮牯⡭潦浲㬩 †椠⁦ℨ慰獲剥獥汵⹴歯 ੻†††敳䙴牯卭慴畴⡳慰獲剥獥汵⹴牥潲⥲਻†††敲畴湲਻††੽ †挠湯瑳瘠污摩瑡潩⁮‽慶楬慤整敓獳潩⡮慰獲剥獥汵⹴慶畬⥥਻††晩⠠瘡污摩瑡潩⹮歯 ੻†††敳䙴牯卭慴畴⡳慶楬慤楴湯攮牲牯㬩 ††爠瑥牵㭮 †素ਊ††摡卤獥楳湯瘨污摩瑡潩⹮慶畬⥥਻††潦浲爮獥瑥⤨਻††敳䙴牯卭慴畴⡳匢獥楳湯猠癡摥猠捵散獳畦汬⹹⤢਻†੽ 映湵瑣潩⁮慨摮敬畎敭楲䥣灮瑵攨敶瑮 ੻††潣獮⁴湩異⁴‽癥湥⹴慴杲瑥਻††潣獮⁴慰獲摥㴠丠浵敢⡲湩異⹴慶畬⥥਻ †椠⁦椨灮瑵瘮污敵㴠㴽∠⤢笠 ††椠灮瑵献瑥畃瑳浯慖楬楤祴∨⤢਻†††敲畴湲਻††੽ †椠⁦ℨ畎扭牥椮䙳湩瑩⡥慰獲摥 籼瀠牡敳⁤‼⤰笠 ††椠灮瑵献瑥畃瑳浯慖楬楤祴∨汐慥敳攠瑮牥愠渠湯渭来瑡癩⁥畮扭牥∮㬩 ††椠灮瑵爮灥牯噴污摩瑩⡹㬩 ††爠瑥牵㭮 †素ਊ††湩異⹴敳䍴獵潴噭污摩瑩⡹∢㬩 素ਊ†畦据楴湯栠湡汤䡥獩潴祲汃捩⡫癥湥⥴笠 †挠湯瑳戠瑵潴⁮‽癥湥⹴慴杲瑥挮潬敳瑳∨栮獩潴祲搭汥瑥ⵥ瑢≮㬩 †椠⁦ℨ畢瑴湯 ੻†††敲畴湲਻††੽ †挠湯瑳椠⁤‽畎扭牥戨瑵潴⹮慤慴敳⹴敳獳潩䥮⥤਻††晩⠠両浵敢⹲獩楆楮整椨⥤ ੻†††敲畴湲਻††੽ †搠汥瑥卥獥楳湯椨⥤਻†੽ 映湵瑣潩⁮潬摡敓獳潩獮⤨笠 †琠祲笠 ††挠湯瑳爠睡㴠眠湩潤⹷潬慣卬潴慲敧朮瑥瑉浥匨佔䅒䕇䭟奅㬩 ††挠湯瑳瀠牡敳⁤‽慲⁷‿半乏瀮牡敳爨睡 ›嵛਻†††晩⠠䄡牲祡椮䅳牲祡瀨牡敳⥤ ੻††††敲畴湲嬠㭝 ††素ਊ†††潣獮⁴慳楮楴敺⁤‽慰獲摥 †††⸠慭⡰慳楮楴敺潌摡摥敓獳潩⥮ †††⸠楦瑬牥昨湵瑣潩⁮椨整⥭笠 ††††爠瑥牵⁮瑩浥℠㴽渠汵㭬 †††素㬩ਊ†††敲畴湲猠牯却獥楳湯䉳䑹瑡⡥慳楮楴敺⥤਻††⁽慣捴⁨攨牲牯 ੻†††敲畴湲嬠㭝 †素 素ਊ†畦据楴湯猠癡卥獥楳湯⡳ ੻††楷摮睯氮捯污瑓牯条⹥敳䥴整⡭呓剏䝁彅䕋ⱙ䨠体⹎瑳楲杮晩⡹敳獳潩獮⤩਻†੽ 映湵瑣潩⁮慳楮楴敺潌摡摥敓獳潩⡮瑩浥 ੻††晩⠠椡整⁭籼琠灹潥⁦瑩浥搮瑡⁥㴡‽猢牴湩≧ ੻†††敲畴湲渠汵㭬 †素ਊ††潣獮⁴敳獳潩⁮‽੻†††摩›畎扭牥椨整⹭摩 籼䐠瑡⹥潮⡷ ‫慍桴昮潬牯䴨瑡⹨慲摮浯⤨⨠ㄠ〰〰Ⱙ ††搠瑡㩥椠整⹭慤整ਬ†††敳癲呥灹㩥匠牴湩⡧瑩浥献牥敶祔数簠⁼漢敶桲湡≤Ⱙ ††愠散㩳丠浵敢⹲獩楆楮整丨浵敢⡲瑩浥愮散⥳਩††††‿畎扭牥椨整⹭捡獥਩††††›瑩浥眮獡捁੥†††††‿਱†††††›ⰰ ††猠牥敶瑁整灭獴›畎扭牥椨整⹭敳癲䅥瑴浥瑰⥳ਬ†††敳癲䵥摡㩥丠浵敢⡲瑩浥献牥敶慍敤Ⱙ ††猠楰敫瑁整灭獴›畎扭牥椨整⹭灳歩䅥瑴浥瑰⥳ਬ†††灳歩䵥摡㩥丠浵敢⡲瑩浥献楰敫慍敤Ⱙ ††猠瑥䝳癩湥›畎扭牥椨整⹭敳獴楇敶⁮籼〠Ⱙ ††猠瑥味灩数㩤丠浵敢⡲瑩浥献瑥味灩数⁤籼〠Ⱙ ††猠瑥䡳瑩›畎扭牥椨整⹭敳獴楈⁴籼〠Ⱙ ††瀠楯瑮坳湯›畎扭牥椨整⹭潰湩獴潗⁮籼〠Ⱙ ††猠牥敶䡳瑩敍›畎扭牥椨整⹭敳癲獥楈䵴⁥籼〠Ⱙ ††猠牥敶偳獡敳坤汥㩬丠浵敢⡲瑩浥献牥敶偳獡敳坤汥⁬籼〠Ⱙ †素਻ †挠湯瑳瘠污摩瑡潩⁮‽慶楬慤整敓獳潩⡮敳獳潩⥮਻††敲畴湲瘠污摩瑡潩⹮歯㼠瘠污摩瑡潩⹮慶畬⁥›畮汬਻†੽ 映湵瑣潩⁮慰獲卥獥楳湯潆浲昨牯䕭敬敭瑮 ੻††潣獮⁴潦浲慄慴㴠渠睥䘠牯䑭瑡⡡潦浲汅浥湥⥴਻††潣獮⁴慤整㴠匠牴湩⡧潦浲慄慴朮瑥∨慤整⤢簠⁼∢⸩牴浩⤨਻††潣獮⁴敳癲呥灹⁥‽瑓楲杮昨牯䑭瑡⹡敧⡴猢牥敶祔数⤢簠⁼∢⸩牴浩⤨਻ †挠湯瑳猠牥敶瑁整灭獴㴠瀠牡敳湉整敧⡲潦浲慄慴朮瑥∨敳癲䅥瑴浥瑰≳⤩਻††潣獮⁴敳癲䵥摡⁥‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴猢牥敶慍敤⤢㬩 †挠湯瑳愠散⁳‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴愢散≳⤩਻††潣獮⁴灳歩䅥瑴浥瑰⁳‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴猢楰敫瑁整灭獴⤢㬩 †挠湯瑳猠楰敫慍敤㴠瀠牡敳湉整敧⡲潦浲慄慴朮瑥∨灳歩䵥摡≥⤩਻††潣獮⁴敳獴楇敶⁮‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴猢瑥䝳癩湥⤢㬩 †挠湯瑳猠瑥味灩数⁤‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴猢瑥味灩数≤⤩਻††潣獮⁴敳獴楈⁴‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴猢瑥䡳瑩⤢㬩 †挠湯瑳瀠楯瑮坳湯㴠瀠牡敳湉整敧⡲潦浲慄慴朮瑥∨潰湩獴潗≮⤩਻††潣獮⁴敳癲獥楈䵴⁥‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴猢牥敶䡳瑩敍⤢㬩 †挠湯瑳猠牥敶偳獡敳坤汥⁬‽慰獲䥥瑮来牥昨牯䑭瑡⹡敧⡴猢牥敶偳獡敳坤汥≬⤩਻ †椠⁦ℨ慤整 ੻†††敲畴湲笠漠㩫映污敳‬牥潲㩲∠汐慥敳猠汥捥⁴⁡慤整∮素਻††੽ †椠⁦ℨ敳癲呥灹⥥笠 ††爠瑥牵⁮⁻歯›慦獬ⱥ攠牲牯›倢敬獡⁥档潯敳愠猠牥敶琠灹⹥•㭽 †素ਊ††晩⠠ ††猠牥敶瑁整灭獴㴠㴽渠汵⁬籼 ††猠牥敶慍敤㴠㴽渠汵⁬籼 ††愠散⁳㴽‽畮汬簠੼†††灳歩䅥瑴浥瑰⁳㴽‽畮汬簠੼†††灳歩䵥摡⁥㴽‽畮汬簠੼†††敳獴楇敶⁮㴽‽畮汬簠੼†††敳獴楔灰摥㴠㴽渠汵⁬籼 ††猠瑥䡳瑩㴠㴽渠汵⁬籼 ††瀠楯瑮坳湯㴠㴽渠汵⁬籼 ††猠牥敶䡳瑩敍㴠㴽渠汵⁬籼 ††猠牥敶偳獡敳坤汥⁬㴽‽畮汬 †⤠笠 ††爠瑥牵⁮⁻歯›慦獬ⱥ攠牲牯›䄢汬渠浵牥捩瘠污敵⁳畭瑳戠⁥桷汯⁥畮扭牥⁳㴾〠∮素਻††੽ †爠瑥牵⁮੻†††歯›牴敵ਬ†††慶畬㩥笠 †††椠㩤䐠瑡⹥潮⡷Ⱙ †††搠瑡㩥搠瑡ⱥ †††猠牥敶祔数›敳癲呥灹ⱥ †††愠散㩳愠散ⱳ †††猠牥敶瑁整灭獴›敳癲䅥瑴浥瑰ⱳ †††猠牥敶慍敤›敳癲䵥摡ⱥ †††猠楰敫瑁整灭獴›灳歩䅥瑴浥瑰ⱳ †††猠楰敫慍敤›灳歩䵥摡ⱥ †††猠瑥䝳癩湥›敳獴楇敶Ɱ †††猠瑥味灩数㩤猠瑥味灩数Ɽ †††猠瑥䡳瑩›敳獴楈ⱴ †††瀠楯瑮坳湯›潰湩獴潗Ɱ †††猠牥敶䡳瑩敍›敳癲獥楈䵴ⱥ †††猠牥敶偳獡敳坤汥㩬猠牥敶偳獡敳坤汥ⱬ ††素ਬ††㭽 素ਊ†畦据楴湯瘠污摩瑡卥獥楳湯猨獥楳湯 ੻††潣獮⁴慶楬卤牥敶祔数⁳‽≛湵敤桲湡≤‬漢敶桲湡≤‬昢潬瑡Ⱒ∠番灭昭潬瑡Ⱒ∠番灭琭灯灳湩崢਻††晩⠠慶楬卤牥敶祔数⹳湩敤佸⡦敳獳潩⹮敳癲呥灹⥥㴠㴽ⴠ⤱笠 ††爠瑥牵⁮⁻歯›慦獬ⱥ攠牲牯›䤢癮污摩猠牥敶琠灹⁥敳敬瑣摥∮素਻††੽ †挠湯瑳欠祥⁳‽ਜ਼†††猢牥敶瑁整灭獴Ⱒ ††∠敳癲䵥摡≥ਬ†††愢散≳ਬ†††猢楰敫瑁整灭獴Ⱒ ††∠灳歩䵥摡≥ਬ†††猢瑥䝳癩湥Ⱒ ††∠敳獴楔灰摥Ⱒ ††∠敳獴楈≴ਬ†††瀢楯瑮坳湯Ⱒ ††∠敳癲獥楈䵴≥ਬ†††猢牥敶偳獡敳坤汥≬ਬ††㭝 †映牯⠠敬⁴⁩‽㬰椠㰠欠祥⹳敬杮桴※⁩㴫ㄠ ੻†††潣獮⁴敫⁹‽敫獹楛㭝 ††椠⁦猨獥楳湯歛祥⁝‼⤰笠 †††爠瑥牵⁮⁻歯›慦獬ⱥ攠牲牯›嘢污敵⁳慣湮瑯戠⁥敮慧楴敶∮素਻†††੽††੽ †椠⁦猨獥楳湯献牥敶慍敤㸠猠獥楳湯献牥敶瑁整灭獴 ੻†††敲畴湲笠漠㩫映污敳‬牥潲㩲∠敓癲獥洠摡⁥慣湮瑯戠⁥牧慥整⁲桴湡猠牥敶愠瑴浥瑰⹳•㭽 †素ਊ††晩⠠敳獳潩⹮灳歩䵥摡⁥‾敳獳潩⹮灳歩䅥瑴浥瑰⥳笠 ††爠瑥牵⁮⁻歯›慦獬ⱥ攠牲牯›匢楰敫⁳慭敤挠湡潮⁴敢朠敲瑡牥琠慨⁮灳歩⁥瑡整灭獴∮素਻††੽ †爠瑥牵⁮⁻歯›牴敵‬慶畬㩥猠獥楳湯素਻†੽ 映湵瑣潩⁮慰獲䥥瑮来牥瘨污敵 ੻††潣獮⁴慰獲摥㴠丠浵敢⡲慶畬⥥਻††晩⠠両浵敢⹲獩湉整敧⡲慰獲摥 籼瀠牡敳⁤‼⤰笠 ††爠瑥牵⁮畮汬਻††੽††敲畴湲瀠牡敳㭤 素ਊ†畦据楴湯愠摤敓獳潩⡮敳獳潩⥮笠 †猠獥楳湯⹳異桳猨獥楳湯㬩 †猠獥楳湯⁳‽潳瑲敓獳潩獮祂慄整猨獥楳湯⥳਻††慳敶敓獳潩獮⤨਻††敲摮牥慄桳潢牡⡤㬩 素ਊ†畦据楴湯搠汥瑥卥獥楳湯猨獥楳湯摉 ੻††潣獮⁴湩瑩慩䱬湥瑧⁨‽敳獳潩獮氮湥瑧㭨 †猠獥楳湯⁳‽敳獳潩獮昮汩整⡲畦据楴湯⠠敳獳潩⥮笠 ††爠瑥牵⁮敳獳潩⹮摩℠㴽猠獥楳湯摉਻††⥽਻ †椠⁦猨獥楳湯⹳敬杮桴℠㴽椠楮楴污敌杮桴 ੻†††慳敶敓獳潩獮⤨਻†††敲摮牥慄桳潢牡⡤㬩 †素 素ਊ†畦据楴湯猠牯却獥楳湯䉳䑹瑡⡥楬瑳 ੻††敲畴湲氠獩ੴ†††献楬散⤨ ††⸠潳瑲昨湵瑣潩⁮愨‬⥢笠 †††爠瑥牵⁮敮⁷慄整愨搮瑡⥥朮瑥楔敭⤨ⴠ渠睥䐠瑡⡥⹢慤整⸩敧呴浩⡥㬩 ††素㬩 素ਊ†畦据楴湯挠污畣慬整敐捲湥慴敧洨摡ⱥ愠瑴浥瑰⥳笠 †椠⁦ℨ畎扭牥椮䙳湩瑩⡥瑡整灭獴 籼愠瑴浥瑰⁳㴼〠 ੻†††敲畴湲〠਻††੽††晩⠠両浵敢⹲獩楆楮整洨摡⥥簠⁼慭敤㰠〠 ੻†††敲畴湲〠਻††੽††敲畴湲⠠慭敤⼠愠瑴浥瑰⥳⨠ㄠ〰਻†੽ 映湵瑣潩⁮潦浲瑡敐捲湥慴敧洨摡ⱥ愠瑴浥瑰⥳笠 †爠瑥牵⁮慣捬汵瑡健牥散瑮条⡥慭敤‬瑡整灭獴⸩潴楆數⡤⤱⬠∠∥਻†੽ 映湵瑣潩⁮条牧来瑡卥獥楳湯⡳楬瑳 ੻††敲畴湲氠獩⹴敲畤散ਨ†††畦据楴湯⠠捡Ᵽ猠獥楳湯 ੻††††捡⹣敳癲䅥瑴浥瑰⁳㴫猠獥楳湯献牥敶瑁整灭獴਻††††捡⹣敳癲䵥摡⁥㴫猠獥楳湯献牥敶慍敤਻††††捡⹣灳歩䅥瑴浥瑰⁳㴫猠獥楳湯献楰敫瑁整灭獴਻††††捡⹣灳歩䵥摡⁥㴫猠獥楳湯献楰敫慍敤਻††††捡⹣捡獥⬠‽敳獳潩⹮捡獥਻††††捡⹣敳獴楇敶⁮㴫猠獥楳湯献瑥䝳癩湥਻††††捡⹣敳獴楔灰摥⬠‽敳獳潩⹮敳獴楔灰摥਻††††捡⹣敳獴楈⁴㴫猠獥楳湯献瑥䡳瑩਻††††捡⹣潰湩獴潗⁮㴫猠獥楳湯瀮楯瑮坳湯਻††††捡⹣敳癲獥楈䵴⁥㴫猠獥楳湯献牥敶䡳瑩敍਻††††捡⹣敳癲獥慐獳摥敗汬⬠‽敳獳潩⹮敳癲獥慐獳摥敗汬਻††††敲畴湲愠捣਻†††ⱽ ††笠 †††猠牥敶瑁整灭獴›ⰰ †††猠牥敶慍敤›ⰰ †††猠楰敫瑁整灭獴›ⰰ †††猠楰敫慍敤›ⰰ †††愠散㩳〠ਬ††††敳獴楇敶㩮〠ਬ††††敳獴楔灰摥›ⰰ †††猠瑥䡳瑩›ⰰ †††瀠楯瑮坳湯›ⰰ †††猠牥敶䡳瑩敍›ⰰ †††猠牥敶偳獡敳坤汥㩬〠ਬ†††੽††㬩 素ਊ†畦据楴湯爠湥敤䑲獡扨慯摲⤨笠 †挠湯瑳琠瑯污⁳‽条牧来瑡卥獥楳湯⡳敳獳潩獮㬩ਊ††敳癲健牥散瑮汅琮硥䍴湯整瑮㴠映牯慭側牥散瑮条⡥潴慴獬献牥敶慍敤‬潴慴獬献牥敶瑁整灭獴㬩 †猠楰敫敐捲湥䕴⹬整瑸潃瑮湥⁴‽潦浲瑡敐捲湥慴敧琨瑯污⹳灳歩䵥摡ⱥ琠瑯污⹳灳歩䅥瑴浥瑰⥳਻††潴慴獬汅琮硥䍴湯整瑮㴠嬠 ††猠獥楳湯⹳敬杮桴⬠∠猠獥楳湯≳ਬ†††匢牥敶∠⬠琠瑯污⹳敳癲䵥摡⁥‫⼢•‫潴慴獬献牥敶瑁整灭獴ਬ†††匢楰敫∠⬠琠瑯污⹳灳歩䵥摡⁥‫⼢•‫潴慴獬献楰敫瑁整灭獴ਬ†††䄢散⁳•‫潴慴獬愮散ⱳ ††∠敓獴䜠启䠯∠⬠琠瑯污⹳敳獴楇敶⁮‫⼢•‫潴慴獬献瑥味灩数⁤‫⼢•‫潴慴獬献瑥䡳瑩ਬ†††倢楯瑮⁳•‫潴慴獬瀮楯瑮坳湯ਬ†††匢牥敶删捥楥敶䠠瑩倯獡⁳•‫潴慴獬献牥敶䡳瑩敍⬠∠∯⬠琠瑯污⹳敳癲獥慐獳摥敗汬ਬ††⹝潪湩∨簠∠㬩ਊ††敲摮牥楈瑳牯⡹敳獳潩獮㬩 †搠慲䍷慨瑲⤨਻ †椠⁦猨獥楳湯⹳敬杮桴㴠㴽〠 ੻†††敳䙴牯卭慴畴⡳丢⁯敳獳潩獮礠瑥‮摁⁤湯⁥潴戠来湩琠慲正湩⁧牰杯敲獳∮㬩 †素攠獬⁥੻†††敳䙴牯卭慴畴⡳吢慲正湩⁧•‫敳獳潩獮氮湥瑧⁨‫•敳獳潩⡮⥳∮㬩 †素 素ਊ†畦据楴湯爠湥敤䡲獩潴祲氨獩⥴笠 †栠獩潴祲楌瑳汅椮湮牥呈䱍㴠∠㬢ਊ††晩⠠楬瑳氮湥瑧⁨㴽‽⤰笠 ††挠湯瑳攠灭祴瑉浥㴠搠捯浵湥⹴牣慥整汅浥湥⡴氢≩㬩 ††攠灭祴瑉浥挮慬獳慎敭㴠∠楨瑳牯⵹浥瑰≹਻†††浥瑰䥹整⹭整瑸潃瑮湥⁴‽丢⁯敳獳潩獮爠捥牯敤⁤敹⹴㬢 ††栠獩潴祲楌瑳汅愮灰湥䍤楨摬攨灭祴瑉浥㬩 ††爠瑥牵㭮 †素ਊ††楬瑳 ††⸠汳捩⡥਩†††爮癥牥敳⤨ ††⸠潦䕲捡⡨畦据楴湯⠠敳獳潩⥮笠 †††挠湯瑳椠整⁭‽潤畣敭瑮挮敲瑡䕥敬敭瑮∨楬⤢਻ †††挠湯瑳琠硥⁴‽潤畣敭瑮挮敲瑡䕥敬敭瑮∨楤≶㬩 †††琠硥⹴汣獡乳浡⁥‽栢獩潴祲椭整⵭整瑸㬢 †††琠硥⹴整瑸潃瑮湥⁴਽†††††潦浲瑡慄整猨獥楳湯搮瑡⥥⬠ ††††∠ⴠ∠⬠ ††††映牯慭却牥敶祔数猨獥楳湯献牥敶祔数 ਫ†††††•‭捁獥∠⬠ ††††猠獥楳湯愮散⁳ਫ†††††•‭敓癲⁥•ਫ†††††敳獳潩⹮敳癲䵥摡⁥ਫ†††††⼢•ਫ†††††敳獳潩⹮敳癲䅥瑴浥瑰⁳ਫ†††††•∨⬠ ††††映牯慭側牥散瑮条⡥敳獳潩⹮敳癲䵥摡ⱥ猠獥楳湯献牥敶瑁整灭獴 ਫ†††††⤢‬灓歩⁥•ਫ†††††敳獳潩⹮灳歩䵥摡⁥ਫ†††††⼢•ਫ†††††敳獳潩⹮灳歩䅥瑴浥瑰⁳ਫ†††††•∨⬠ ††††映牯慭側牥散瑮条⡥敳獳潩⹮灳歩䵥摡ⱥ猠獥楳湯献楰敫瑁整灭獴 ਫ†††††⤢‬敓獴䜠启䠯∠⬠ ††††猠獥楳湯献瑥䝳癩湥⬠ ††††∠∯⬠ ††††猠獥楳湯献瑥味灩数⁤ਫ†††††⼢•ਫ†††††敳獳潩⹮敳獴楈⁴ਫ†††††Ⱒ倠楯瑮⁳•ਫ†††††敳獳潩⹮潰湩獴潗⁮ਫ†††††Ⱒ删捥楥敶䠠瑩倯獡⁳•ਫ†††††敳獳潩⹮敳癲獥楈䵴⁥ਫ†††††⼢•ਫ†††††敳獳潩⹮敳癲獥慐獳摥敗汬਻ †††挠湯瑳搠汥瑥䉥瑵潴⁮‽潤畣敭瑮挮敲瑡䕥敬敭瑮∨畢瑴湯⤢਻††††敤敬整畂瑴湯琮灹⁥‽戢瑵潴≮਻††††敤敬整畂瑴湯挮慬獳慎敭㴠∠楨瑳牯⵹敤敬整戭湴㬢 †††搠汥瑥䉥瑵潴⹮慤慴敳⹴敳獳潩䥮⁤‽瑓楲杮猨獥楳湯椮⥤਻††††敤敬整畂瑴湯琮硥䍴湯整瑮㴠∠敄敬整㬢ਊ††††瑩浥愮灰湥䍤楨摬琨硥⥴਻††††瑩浥愮灰湥䍤楨摬搨汥瑥䉥瑵潴⥮਻††††楨瑳牯䱹獩䕴⹬灡数摮桃汩⡤瑩浥㬩 ††素㬩 素ਊ†畦据楴湯映牯慭䑴瑡⡥慤整瑓楲杮 ੻††潣獮⁴慤整㴠渠睥䐠瑡⡥慤整瑓楲杮㬩 †椠⁦丨浵敢⹲獩慎⡎慤整朮瑥楔敭⤨⤩笠 ††爠瑥牵⁮慤整瑓楲杮਻††੽††敲畴湲搠瑡⹥潴潌慣敬慄整瑓楲杮用摮晥湩摥‬੻†††敹牡›渢浵牥捩Ⱒ ††洠湯桴›猢潨瑲Ⱒ ††搠祡›渢浵牥捩Ⱒ †素㬩 素ਊ†畦据楴湯映牯慭却牥敶祔数琨灹⥥笠 †挠湯瑳氠扡汥⁳‽੻†††湵敤桲湡㩤∠湕敤桲湡≤ਬ†††癯牥慨摮›伢敶桲湡≤ਬ†††汦慯㩴∠汆慯≴ਬ†††樢浵⵰汦慯≴›䨢浵⁰汆慯≴ਬ†††樢浵⵰潴獰楰≮›䨢浵⁰潔獰楰≮ਬ††㭽 †爠瑥牵⁮慬敢獬瑛灹嵥簠⁼唢歮潮湷㬢 素ਊ†畦据楴湯搠慲䍷慨瑲⤨笠 †挠湯瑳猠牯整卤獥楳湯⁳‽潳瑲敓獳潩獮祂慄整猨獥楳湯⥳਻††潣獮⁴瑣⁸‽敳畴䍰湡慶㉳⡄档牡䍴湡慶ⱳ㌠〰㬩 †椠⁦ℨ瑣⥸笠 ††爠瑥牵㭮 †素ਊ††潣獮⁴楷瑤⁨‽档牡䍴湡慶⹳汣敩瑮楗瑤⁨籼㘠〰਻††潣獮⁴敨杩瑨㴠㌠〰਻††瑣⹸汣慥割捥⡴ⰰ〠‬楷瑤ⱨ栠楥桧⥴਻ †椠⁦猨牯整卤獥楳湯⹳敬杮桴㴠㴽〠 ੻†††瑣⹸楦汬瑓汹⁥‽⌢挵搶㐸㬢 ††挠硴昮湯⁴‽ㄢ瀴⁸敓潧⁥䥕㬢 ††挠硴昮汩呬硥⡴䄢摤猠獥楳湯⁳潴搠獩汰祡挠慨瑲琠敲摮⹳Ⱒㄠⰴ㈠⤴਻†††敲畴湲਻††੽ †挠湯瑳瀠摡楤杮㴠笠琠灯›〲‬楲桧㩴㈠ⰰ戠瑯潴㩭㌠ⰰ氠晥㩴㌠‶㭽 †挠湯瑳挠慨瑲⁗‽楷瑤⁨‭慰摤湩⹧敬瑦ⴠ瀠摡楤杮爮杩瑨਻††潣獮⁴档牡䡴㴠栠楥桧⁴‭慰摤湩⹧潴⁰‭慰摤湩⹧潢瑴浯਻ †搠慲䝷楲䱤湩獥挨硴‬慰摤湩Ⱨ挠慨瑲ⱗ挠慨瑲⥈਻ †挠湯瑳猠牥敶敓楲獥㴠猠牯整卤獥楳湯⹳慭⡰畦据楴湯⠠敳獳潩⥮笠 ††爠瑥牵⁮慣捬汵瑡健牥散瑮条⡥敳獳潩⹮敳癲䵥摡ⱥ猠獥楳湯献牥敶瑁整灭獴㬩 †素㬩 †挠湯瑳猠楰敫敓楲獥㴠猠牯整卤獥楳湯⹳慭⡰畦据楴湯⠠敳獳潩⥮笠 ††爠瑥牵⁮慣捬汵瑡健牥散瑮条⡥敳獳潩⹮灳歩䵥摡ⱥ猠獥楳湯献楰敫瑁整灭獴㬩 †素㬩 †挠湯瑳爠捥楥敶慐獳敓楲獥㴠猠牯整卤獥楳湯⹳慭⡰畦据楴湯⠠敳獳潩⥮笠 ††挠湯瑳琠瑯污敓癲剥捥楥敶⁳‽敳獳潩⹮敳癲獥楈䵴⁥‫敳獳潩⹮敳癲獥慐獳摥敗汬਻†††敲畴湲挠污畣慬整敐捲湥慴敧猨獥楳湯献牥敶偳獡敳坤汥ⱬ琠瑯污敓癲剥捥楥敶⥳਻††⥽਻ †搠慲卷牥敩⡳瑣ⱸ猠牥敶敓楲獥‬慰摤湩Ⱨ挠慨瑲ⱗ挠慨瑲ⱈ∠㈣㘵攳≢㬩 †搠慲卷牥敩⡳瑣ⱸ猠楰敫敓楲獥‬慰摤湩Ⱨ挠慨瑲ⱗ挠慨瑲ⱈ∠搣㉣㈶∶㬩 †搠慲卷牥敩⡳瑣ⱸ爠捥楥敶慐獳敓楲獥‬慰摤湩Ⱨ挠慨瑲ⱗ挠慨瑲ⱈ∠〣慥愵∴㬩 †搠慲䱷来湥⡤瑣ⱸ眠摩桴㬩 素ਊ†畦据楴湯猠瑥灵慃癮獡䐲挨湡慶ⱳ栠楥桧側⥸笠 †椠⁦ℨ慣癮獡 ੻†††敲畴湲渠汵㭬 †素ਊ††潣獮⁴灤⁲‽楷摮睯搮癥捩健硩汥慒楴⁯籼ㄠ਻††潣獮⁴楷瑤⁨‽慣癮獡挮楬湥坴摩桴簠⁼〶㬰ਊ††慣癮獡眮摩桴㴠䴠瑡⹨汦潯⡲楷瑤⁨‪灤⥲਻††慣癮獡栮楥桧⁴‽慍桴昮潬牯栨楥桧側⁸‪灤⥲਻ †挠湯瑳挠硴㴠挠湡慶⹳敧䍴湯整瑸∨搲⤢਻††晩⠠挡硴 ੻†††敲畴湲渠汵㭬 †素ਊ††瑣⹸敳呴慲獮潦浲搨牰‬ⰰ〠‬灤Ⱳ〠‬⤰਻††敲畴湲挠硴਻†੽ 映湵瑣潩⁮牤睡片摩楌敮⡳瑣ⱸ瀠摡楤杮‬档牡坴‬档牡䡴 ੻††潣獮⁴慭歲⁳‽せ‬㔲‬〵‬㔷‬〱崰਻ †挠硴献牴歯卥祴敬㴠∠攣攵晡∲਻††瑣⹸楦汬瑓汹⁥‽⌢戶㈷〸㬢 †挠硴氮湩坥摩桴㴠ㄠ਻††瑣⹸潦瑮㴠∠ㄱ硰匠来敯唠≉਻ †洠牡獫昮牯慅档昨湵瑣潩⁮洨牡⥫笠 ††挠湯瑳礠㴠瀠摡楤杮琮灯⬠挠慨瑲⁈‭洨牡⁫ 〱⤰⨠挠慨瑲㭈 ††挠硴戮来湩慐桴⤨਻†††瑣⹸潭敶潔瀨摡楤杮氮晥ⱴ礠㬩 ††挠硴氮湩呥⡯慰摤湩⹧敬瑦⬠挠慨瑲ⱗ礠㬩 ††挠硴献牴歯⡥㬩 ††挠硴昮汩呬硥⡴瑓楲杮洨牡⥫‬ⰸ礠⬠㐠㬩 †素㬩 素ਊ†畦据楴湯搠慲卷牥敩⡳瑣ⱸ瘠污敵ⱳ瀠摡楤杮‬档牡坴‬档牡䡴‬潣潬⥲笠 †挠湯瑳挠畯瑮㴠瘠污敵⹳敬杮桴਻††潣獮⁴瑳灥⁘‽潣湵⁴‾‱‿档牡坴⼠⠠潣湵⁴‭⤱㨠〠਻ †挠硴献牴歯卥祴敬㴠挠汯牯਻††瑣⹸楦汬瑓汹⁥‽潣潬㭲 †挠硴氮湩坥摩桴㴠㈠਻††瑣⹸敢楧偮瑡⡨㬩ਊ††慶畬獥昮牯慅档昨湵瑣潩⁮瘨污敵‬湩敤⥸笠 ††挠湯瑳砠㴠瀠摡楤杮氮晥⁴‫湩敤⁸‪瑳灥㭘 ††挠湯瑳礠㴠瀠摡楤杮琮灯⬠挠慨瑲⁈‭瘨污敵⼠ㄠ〰 ‪档牡䡴਻†††晩⠠湩敤⁸㴽‽⤰笠 †††挠硴洮癯呥⡯ⱸ礠㬩 ††素攠獬⁥੻††††瑣⹸楬敮潔砨‬⥹਻†††੽††⥽਻ †挠硴献牴歯⡥㬩ਊ††慶畬獥昮牯慅档昨湵瑣潩⁮瘨污敵‬湩敤⥸笠 ††挠湯瑳砠㴠瀠摡楤杮氮晥⁴‫湩敤⁸‪瑳灥㭘 ††挠湯瑳礠㴠瀠摡楤杮琮灯⬠挠慨瑲⁈‭瘨污敵⼠ㄠ〰 ‪档牡䡴਻†††瑣⹸敢楧偮瑡⡨㬩 ††挠硴愮捲砨‬ⱹ㌠‬ⰰ䴠瑡⹨䥐⨠㈠㬩 ††挠硴昮汩⡬㬩 †素㬩 素ਊ†畦据楴湯搠慲䱷来湥⡤瑣ⱸ眠摩桴 ੻††瑣⹸楦汬瑓汹⁥‽⌢㔲㌶扥㬢 †挠硴昮汩剬捥⡴楷瑤⁨‭㘲ⰰㄠⰰㄠⰰㄠ⤰਻††瑣⹸楦汬瑓汹⁥‽⌢㌱〲㐳㬢 †挠硴昮湯⁴‽ㄢ瀲⁸敓潧⁥䥕㬢 †挠硴昮汩呬硥⡴匢牥敶┠Ⱒ眠摩桴ⴠ㈠㐴‬〲㬩ਊ††瑣⹸楦汬瑓汹⁥‽⌢捤㘲㘲㬢 †挠硴昮汩剬捥⡴楷瑤⁨‭㤱ⰰㄠⰰㄠⰰㄠ⤰਻††瑣⹸楦汬瑓汹⁥‽⌢㌱〲㐳㬢 †挠硴昮汩呬硥⡴匢楰敫┠Ⱒ眠摩桴ⴠㄠ㐷‬〲㬩ਊ††瑣⹸楦汬瑓汹⁥‽⌢攰㕡㑡㬢 †挠硴昮汩剬捥⡴楷瑤⁨‭㈱ⰰㄠⰰㄠⰰㄠ⤰਻††瑣⹸楦汬瑓汹⁥‽⌢㌱〲㐳㬢 †挠硴昮汩呬硥⡴刢捥楥敶┠Ⱒ眠摩桴ⴠㄠ㐰‬〲㬩 素ਊ†畦据楴湯猠瑥潆浲瑓瑡獵洨獥慳敧 ੻††晩⠠昡牯卭慴畴䕳⥬笠 ††爠瑥牵㭮 †素 †映牯卭慴畴䕳⹬整瑸潃瑮湥⁴‽敭獳条㭥 素紊⠩㬩�
+(function () {
+  const STORAGE_KEY = "volleyball-sessions";
+
+  const form = document.getElementById("session-form");
+  const servePercentEl = document.getElementById("serve-percent-value");
+  const spikePercentEl = document.getElementById("spike-percent-value");
+  const totalsEl = document.getElementById("totals-value");
+  const historyListEl = document.getElementById("session-history-list");
+  const chartCanvas = document.getElementById("performance-chart");
+
+  let sessions = loadSessions();
+
+  render();
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const session = {
+      id: Date.now(),
+      date: String(formData.get("date") || ""),
+      serveAttempts: Number(formData.get("serveAttempts") || 0),
+      serveMade: Number(formData.get("serveMade") || 0),
+      spikeAttempts: Number(formData.get("spikeAttempts") || 0),
+      spikeMade: Number(formData.get("spikeMade") || 0),
+      serveType: String(formData.get("serveType") || ""),
+      wasAce: formData.get("wasAce") === "on",
+      setsGiven: Number(formData.get("setsGiven") || 0),
+      setsTipped: Number(formData.get("setsTipped") || 0),
+      setsHit: Number(formData.get("setsHit") || 0),
+      pointsWon: Number(formData.get("pointsWon") || 0),
+    };
+
+    if (!session.date) {
+      return;
+    }
+
+    if (session.serveMade > session.serveAttempts || session.spikeMade > session.spikeAttempts) {
+      window.alert("Made values cannot be greater than attempts.");
+      return;
+    }
+
+    sessions.push(session);
+    sessions.sort(function (a, b) {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    });
+
+    persistSessions();
+    render();
+    form.reset();
+  });
+
+  function loadSessions() {
+    try {
+      const raw = window.localStorage.getItem(STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function persistSessions() {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
+  }
+
+  function render() {
+    const totals = sessions.reduce(
+      function (acc, current) {
+        acc.serveAttempts += current.serveAttempts;
+        acc.serveMade += current.serveMade;
+        acc.spikeAttempts += current.spikeAttempts;
+        acc.spikeMade += current.spikeMade;
+        return acc;
+      },
+      { serveAttempts: 0, serveMade: 0, spikeAttempts: 0, spikeMade: 0 }
+    );
+
+    servePercentEl.textContent = formatPercent(totals.serveMade, totals.serveAttempts);
+    spikePercentEl.textContent = formatPercent(totals.spikeMade, totals.spikeAttempts);
+    totalsEl.textContent = [
+      sessions.length + " sessions",
+      "Serve " + totals.serveMade + "/" + totals.serveAttempts,
+      "Spike " + totals.spikeMade + "/" + totals.spikeAttempts,
+    ].join(" | ");
+
+    renderHistory();
+    drawChart();
+  }
+
+  function renderHistory() {
+    historyListEl.innerHTML = "";
+
+    if (sessions.length === 0) {
+      const emptyItem = document.createElement("li");
+      emptyItem.className = "history-empty";
+      emptyItem.textContent = "No sessions recorded yet.";
+      historyListEl.appendChild(emptyItem);
+      return;
+    }
+
+    sessions
+      .slice()
+      .reverse()
+      .forEach(function (session) {
+        const item = document.createElement("li");
+        const serve = formatPercent(session.serveMade, session.serveAttempts);
+        const spike = formatPercent(session.spikeMade, session.spikeAttempts);
+
+        item.textContent =
+          session.date +
+          " - Serve " +
+          session.serveMade +
+          "/" +
+          session.serveAttempts +
+          " (" +
+          serve +
+          "), Spike " +
+          session.spikeMade +
+          "/" +
+          session.spikeAttempts +
+          " (" +
+          spike +
+          ")";
+        historyListEl.appendChild(item);
+      });
+  }
+
+  function drawChart() {
+    if (!chartCanvas) {
+      return;
+    }
+
+    const dpr = window.devicePixelRatio || 1;
+    const width = chartCanvas.clientWidth || 600;
+    const height = 280;
+
+    chartCanvas.width = Math.floor(width * dpr);
+    chartCanvas.height = Math.floor(height * dpr);
+
+    const ctx = chartCanvas.getContext("2d");
+    if (!ctx) {
+      return;
+    }
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, width, height);
+
+    if (sessions.length === 0) {
+      ctx.fillStyle = "#6b7280";
+      ctx.font = "14px Segoe UI";
+      ctx.fillText("Add sessions to see chart data.", 12, 24);
+      return;
+    }
+
+    const padding = { top: 18, right: 16, bottom: 26, left: 36 };
+    const chartW = width - padding.left - padding.right;
+    const chartH = height - padding.top - padding.bottom;
+
+    ctx.strokeStyle = "#e5e7eb";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(padding.left, padding.top, chartW, chartH);
+
+    drawGridLines(ctx, padding, chartW, chartH);
+
+    const serveSeries = sessions.map(function (session) {
+      return toPercent(session.serveMade, session.serveAttempts);
+    });
+    const spikeSeries = sessions.map(function (session) {
+      return toPercent(session.spikeMade, session.spikeAttempts);
+    });
+
+    drawSeries(ctx, serveSeries, padding, chartW, chartH, "#2563eb");
+    drawSeries(ctx, spikeSeries, padding, chartW, chartH, "#dc2626");
+
+    ctx.fillStyle = "#2563eb";
+    ctx.fillRect(width - 160, 12, 10, 10);
+    ctx.fillStyle = "#111827";
+    ctx.font = "12px Segoe UI";
+    ctx.fillText("Serve %", width - 145, 21);
+
+    ctx.fillStyle = "#dc2626";
+    ctx.fillRect(width - 90, 12, 10, 10);
+    ctx.fillStyle = "#111827";
+    ctx.fillText("Spike %", width - 75, 21);
+  }
+
+  function drawGridLines(ctx, padding, chartW, chartH) {
+    const marks = [0, 25, 50, 75, 100];
+
+    ctx.strokeStyle = "#eef2f7";
+    ctx.fillStyle = "#6b7280";
+    ctx.font = "11px Segoe UI";
+
+    marks.forEach(function (mark) {
+      const y = padding.top + chartH - (mark / 100) * chartH;
+      ctx.beginPath();
+      ctx.moveTo(padding.left, y);
+      ctx.lineTo(padding.left + chartW, y);
+      ctx.stroke();
+      ctx.fillText(String(mark), 8, y + 4);
+    });
+  }
+
+  function drawSeries(ctx, values, padding, chartW, chartH, color) {
+    const count = values.length;
+    const stepX = count > 1 ? chartW / (count - 1) : 0;
+
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+
+    values.forEach(function (value, index) {
+      const x = padding.left + index * stepX;
+      const y = padding.top + chartH - (value / 100) * chartH;
+      if (index === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+    });
+
+    ctx.stroke();
+
+    values.forEach(function (value, index) {
+      const x = padding.left + index * stepX;
+      const y = padding.top + chartH - (value / 100) * chartH;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+
+  function toPercent(made, attempts) {
+    if (attempts <= 0) {
+      return 0;
+    }
+    return (made / attempts) * 100;
+  }
+
+  function formatPercent(made, attempts) {
+    const value = toPercent(made, attempts);
+    return value.toFixed(1) + "%";
+  }
+
+  window.addEventListener("resize", drawChart);
+})();
