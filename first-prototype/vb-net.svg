@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f3f8ff"/>
+  <rect x="120" y="120" width="560" height="260" fill="#ffffff" stroke="#2f5fbf" stroke-width="8"/>
+  <g stroke="#7a9ce2" stroke-width="3">
+    <path d="M120 150h560M120 180h560M120 210h560M120 240h560M120 270h560M120 300h560M120 330h560"/>
+    <path d="M160 120v260M200 120v260M240 120v260M280 120v260M320 120v260M360 120v260M400 120v260M440 120v260M480 120v260M520 120v260M560 120v260M600 120v260M640 120v260"/>
+  </g>
+  <rect x="95" y="90" width="20" height="320" fill="#1f3d7a"/>
+  <rect x="685" y="90" width="20" height="320" fill="#1f3d7a"/>
+  <text x="30" y="60" fill="#1f3d7a" font-size="44" font-family="Segoe UI, Arial">Volleyball Net</text>
+</svg>

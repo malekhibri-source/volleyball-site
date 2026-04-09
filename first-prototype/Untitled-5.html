@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volleyball Session Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="app-shell">
+
+  <header class="app-header">
+    <h1>Session Tracker</h1>
+    <p class="app-subtitle">Train daily. Track smarter.</p>
+  </header>
+
+  <!-- FORM -->
+  <section id="session-form-section">
+    <h2>Session Form</h2>
+    <p id="form-status-message">Ready. Add your first session.</p>
+
+    <form id="session-form">
+
+      <div class="field-row">
+        <label>Date</label>
+        <input type="date" id="session-date" required>
+      </div>
+
+      <div class="field-row">
+        <label>Serve Attempts</label>
+        <input type="number" id="serve-attempts" min="0" required>
+      </div>
+
+      <div class="field-row">
+        <label>Serves Made</label>
+        <input type="number" id="serve-made" min="0" required>
+      </div>
+
+      <div class="field-row">
+        <label>Spike Attempts</label>
+        <input type="number" id="spike-attempts" min="0" required>
+      </div>
+
+      <div class="field-row">
+        <label>Spikes Made</label>
+        <input type="number" id="spike-made" min="0" required>
+      </div>
+
+      <button type="submit">Save Session</button>
+
+    </form>
+  </section>
+
+  <!-- SUMMARY -->
+  <section id="summary-section">
+    <h2>Summary</h2>
+
+    <div class="summary-cards">
+      <div>
+        <h3>Serve %</h3>
+        <p id="serve-percent-value">0%</p>
+      </div>
+
+      <div>
+        <h3>Spike %</h3>
+        <p id="spike-percent-value">0%</p>
+      </div>
+
+      <div>
+        <h3>Totals</h3>
+        <p id="totals-value">0 sessions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="session-history-section">
+    <h2>Session History</h2>
+    <ul id="session-history-list">
+      <li>No sessions recorded yet.</li>
+    </ul>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>

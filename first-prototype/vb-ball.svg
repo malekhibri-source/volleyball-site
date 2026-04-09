@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0c4fb8"/>
+      <stop offset="1" stop-color="#2d83ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="400" cy="250" r="150" fill="#fff7ea" stroke="#e7d2ad" stroke-width="8"/>
+  <path d="M280 170c70 20 110 70 120 160" fill="none" stroke="#d5b88e" stroke-width="10"/>
+  <path d="M520 170c-70 20-110 70-120 160" fill="none" stroke="#d5b88e" stroke-width="10"/>
+  <path d="M250 250h300" fill="none" stroke="#d5b88e" stroke-width="10"/>
+  <text x="30" y="60" fill="#ffffff" font-size="44" font-family="Segoe UI, Arial">Volleyball Ball</text>
+</svg>

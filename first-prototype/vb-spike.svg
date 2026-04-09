@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#ffe9c8"/>
+  <rect y="380" width="800" height="120" fill="#f0cb8f"/>
+  <circle cx="560" cy="120" r="42" fill="#fff7ea" stroke="#d5b88e" stroke-width="8"/>
+  <path d="M180 330l90-90 60 40 120-120" fill="none" stroke="#0b4fae" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="165" cy="350" r="25" fill="#0b4fae"/>
+  <path d="M445 180l55 55" stroke="#0b4fae" stroke-width="16" stroke-linecap="round"/>
+  <text x="30" y="60" fill="#0b4fae" font-size="44" font-family="Segoe UI, Arial">Volleyball Spike</text>
+</svg>
