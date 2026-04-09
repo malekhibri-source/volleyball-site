@@ -4,13 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Volleyball Session Tracker</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="volley.css" />
 </head>
 <body>
   <main class="app-shell">
     <header class="app-header">
-      <h1>Session Tracker</h1>
-      <p class="app-subtitle">Train daily. Track smarter.</p>
+      <div class="header-content">
+        <h1>Session Tracker</h1>
+        <p class="app-subtitle">Train daily. Track smarter.</p>
+      </div>
+      <div class="volleyball-gallery">
+        <img src="vb-ball.svg" alt="Volleyball" class="gallery-img" />
+        <img src="vb-net.svg" alt="Volleyball Net" class="gallery-img" />
+        <img src="vb-serve.svg" alt="Volleyball Serve" class="gallery-img" />
+        <img src="vb-spike.svg" alt="Volleyball Spike" class="gallery-img" />
+      </div>
     </header>
 
     <section id="session-form-section" aria-labelledby="session-form-title">
@@ -41,9 +49,9 @@
           </select>
         </div>
 
-        <div class="field-row field-row-inline">
-          <label for="was-ace">Was it an ace?</label>
-          <input type="checkbox" id="was-ace" name="wasAce" />
+        <div class="field-row">
+          <label for="aces-count">Aces</label>
+          <input type="number" id="aces-count" name="acesCount" min="0" step="1" value="0" required />
         </div>
 
         <div class="field-row">
@@ -91,6 +99,11 @@
         <article class="summary-card" id="serve-percent-card">
           <h3>Serve %</h3>
           <p id="serve-percent-value">0%</p>
+        </article>
+
+        <article class="summary-card" id="ace-percent-card">
+          <h3>Ace %</h3>
+          <p id="ace-percent-value">0%</p>
         </article>
 
         <article class="summary-card" id="spike-percent-card">

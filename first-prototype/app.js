@@ -3,6 +3,7 @@
 
   const form = document.getElementById("session-form");
   const servePercentEl = document.getElementById("serve-percent-value");
+  const acePercentEl = document.getElementById("ace-percent-value");
   const spikePercentEl = document.getElementById("spike-percent-value");
   const totalsEl = document.getElementById("totals-value");
   const historyListEl = document.getElementById("session-history-list");
@@ -24,7 +25,7 @@
       spikeAttempts: Number(formData.get("spikeAttempts") || 0),
       spikeMade: Number(formData.get("spikeMade") || 0),
       serveType: String(formData.get("serveType") || ""),
-      wasAce: formData.get("wasAce") === "on",
+      acesCount: Number(formData.get("acesCount") || 0),
       setsGiven: Number(formData.get("setsGiven") || 0),
       setsTipped: Number(formData.get("setsTipped") || 0),
       setsHit: Number(formData.get("setsHit") || 0),
@@ -71,15 +72,18 @@
         acc.serveMade += current.serveMade;
         acc.spikeAttempts += current.spikeAttempts;
         acc.spikeMade += current.spikeMade;
+        acc.acesCount += current.acesCount;
         return acc;
       },
-      { serveAttempts: 0, serveMade: 0, spikeAttempts: 0, spikeMade: 0 }
+      { serveAttempts: 0, serveMade: 0, spikeAttempts: 0, spikeMade: 0, acesCount: 0 }
     );
 
     servePercentEl.textContent = formatPercent(totals.serveMade, totals.serveAttempts);
+    acePercentEl.textContent = formatPercent(totals.acesCount, totals.serveAttempts);
     spikePercentEl.textContent = formatPercent(totals.spikeMade, totals.spikeAttempts);
     totalsEl.textContent = [
       sessions.length + " sessions",
+      "Aces: " + totals.acesCount,
       "Serve " + totals.serveMade + "/" + totals.serveAttempts,
       "Spike " + totals.spikeMade + "/" + totals.spikeAttempts,
     ].join(" | ");
@@ -105,11 +109,16 @@
       .forEach(function (session) {
         const item = document.createElement("li");
         const serve = formatPercent(session.serveMade, session.serveAttempts);
+        const ace = formatPercent(session.acesCount, session.serveAttempts);
         const spike = formatPercent(session.spikeMade, session.spikeAttempts);
 
         item.textContent =
           session.date +
-          " - Serve " +
+          " - Aces: " +
+          session.acesCount +
+          " (" +
+          ace +
+          "), Serve " +
           session.serveMade +
           "/" +
           session.serveAttempts +
