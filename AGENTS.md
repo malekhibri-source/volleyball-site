@@ -40,3 +40,41 @@ Open `first-prototype/index.html` directly in a browser (no server required).
 ### Dashboard Elements
 - `#serve-percent-value`, `#spike-percent-value`, `#totals-value`
 - `#session-history-list`, `#performance-chart` (canvas)
+
+## Session History
+
+### 2026-04-09: Bug Fix - Sessions Not Appearing in Dashboard
+
+**Problem:** When saving an entry, it wasn't appearing in the performance dashboard.
+
+**Root Cause:** Multiple encoding issues:
+1. `app.js` was corrupted binary (couldn't be parsed as JavaScript)
+2. `script.js` had UTF-16LE encoding (spaces between characters)
+3. `index.html` had UTF-16LE with BOM encoding
+4. HTML files referenced corrupted `app.js` instead of working `script.js`
+5. `script.js` only saved 5 fields, missing 7 additional form fields
+
+**Fix Applied:**
+- Deleted corrupted `app.js` and 3 duplicate HTML files (`untitled-4.html`, `Untitled-5.html`, `session.html`)
+- Converted `script.js` from UTF-16LE to UTF-8
+- Extended data model to save all 12 form fields
+- Renamed `script.js` → `app.js`
+- Rewrote `index.html` with clean UTF-8 encoding
+
+**Commands for future encoding fixes:**
+```powershell
+# Check encoding (UTF-16LE starts with 28 00 66 00...)
+Format-Hex filename | Select-Object -First 4
+
+# Convert UTF-16LE to UTF-8
+$content = Get-Content "file" -Encoding Unicode -Raw
+[System.IO.File]::WriteAllText("file", $content)
+
+# Convert UTF-16LE to UTF-8 (alternative)
+$content = [System.IO.File]::ReadAllText("file", [System.Text.Encoding]::Unicode)
+[System.IO.File]::WriteAllText("file", $content, [System.Text.Encoding]::UTF8)
+```
+
+**Next Steps (not implemented yet):**
+- Display extra fields (`serveType`, `wasAce`, `setsGiven`, `setsTipped`, `setsHit`, `pointsWon`) in dashboard
+- Add session editing/deletion functionality
