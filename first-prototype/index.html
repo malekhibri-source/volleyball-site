@@ -40,8 +40,11 @@
           <input type="number" id="serve-attempts" name="serveAttempts" min="0" step="1" required />
         </div>
 
-        <div class="field-row">
-          <label for="serve-type">Serve Type</label>
+        <div class="field-row-with-video">
+          <div class="field-label-group">
+            <label for="serve-type">Serve Type</label>
+            <a href="https://www.youtube.com/watch?v=xBNNxQiR2VI" target="_blank" class="video-link" title="Underhand serve tutorial">📺</a>
+          </div>
           <select id="serve-type" name="serveType" required>
             <option value="">Select serve type</option>
             <option value="underhand">Underhand</option>
@@ -69,6 +72,7 @@
           <div class="field-img-label">
             <img src="vb-spike.svg" alt="Spike" />
             <label for="spike-attempts">Spike Attempts</label>
+            <a href="https://www.youtube.com/watch?v=B7vbjJ2wQQQ" target="_blank" class="video-link" title="Spiking footwork tutorial">📺</a>
           </div>
           <input type="number" id="spike-attempts" name="spikeAttempts" min="0" step="1" required />
         </div>
@@ -82,6 +86,7 @@
           <div class="field-img-label">
             <img src="vb-net.svg" alt="Pass" />
             <label for="passes-received">Passes Received</label>
+            <a href="https://www.youtube.com/watch?v=gOgfoEGUDCA" target="_blank" class="video-link" title="Passing tutorial">📺</a>
           </div>
           <input type="number" id="passes-received" name="passesReceived" min="0" step="1" value="0" required />
         </div>
@@ -162,6 +167,7 @@
               <option value="underhand">Underhand</option>
               <option value="overhand">Overhand</option>
             </select>
+            <a href="#" target="_blank" class="video-link serve-video-btn" data-serve="float" data-target="serve-a" title="Watch tutorial">📺</a>
           </h3>
           <div class="attempt-row" id="attempts-a">
             <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
@@ -194,6 +200,7 @@
               <option value="underhand">Underhand</option>
               <option value="overhand">Overhand</option>
             </select>
+            <a href="#" target="_blank" class="video-link serve-video-btn" data-serve="float" data-target="serve-b" title="Watch tutorial">📺</a>
           </h3>
           <div class="attempt-row" id="attempts-b">
             <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
@@ -237,6 +244,48 @@
       <div class="chart-container">
         <canvas id="performance-chart" aria-label="Serve and spike performance by session"></canvas>
       </div>
+    </section>
+
+    <section id="improvement-section" aria-labelledby="improvement-title">
+      <h2>📺 Improve Your Game</h2>
+      <div class="improvement-grid">
+        <article class="improvement-card">
+          <h3><img src="vb-net.svg" alt="Pass" class="skill-icon" /> Passing</h3>
+          <ul class="video-list">
+            <li><a href="https://www.youtube.com/watch?v=gOgfoEGUDCA" target="_blank"><span class="play-icon">▶</span> Passing Fundamentals</a></li>
+            <li><a href="https://www.youtube.com/watch?v=Ymx-bj5WbK4" target="_blank"><span class="play-icon">▶</span> Advanced Passing</a></li>
+          </ul>
+        </article>
+
+        <article class="improvement-card">
+          <h3><img src="vb-serve.svg" alt="Serve" class="skill-icon" /> Serving</h3>
+          <ul class="video-list">
+            <li><a href="https://www.youtube.com/watch?v=xBNNxQiR2VI" target="_blank"><span class="play-icon">▶</span> Underhand Serve</a></li>
+            <li><a href="https://www.youtube.com/watch?v=bXEDuPePTCs" target="_blank"><span class="play-icon">▶</span> Overhand Serve</a></li>
+            <li><a href="https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s" target="_blank"><span class="play-icon">▶</span> Float Serve</a></li>
+            <li><a href="https://www.youtube.com/watch?v=TX8a7nWlbiw" target="_blank"><span class="play-icon">▶</span> Jump Float Serve</a></li>
+            <li><a href="https://www.youtube.com/watch?v=fGSgD2k-NEU&t=137s" target="_blank"><span class="play-icon">▶</span> Jump Topspin Serve</a></li>
+          </ul>
+        </article>
+
+        <article class="improvement-card">
+          <h3><img src="vb-spike.svg" alt="Spike" class="skill-icon" /> Spiking</h3>
+          <ul class="video-list">
+            <li><a href="https://www.youtube.com/watch?v=B7vbjJ2wQQQ" target="_blank"><span class="play-icon">▶</span> Spiking Footwork</a></li>
+            <li><a href="https://www.youtube.com/watch?v=u-WhjYYocBs" target="_blank"><span class="play-icon">▶</span> Approach &amp; Takeoff</a></li>
+            <li><a href="https://www.youtube.com/watch?v=bWVWKnB04ho" target="_blank"><span class="play-icon">▶</span> Arm Swing Mechanics</a></li>
+            <li><a href="https://www.youtube.com/watch?v=jnEA9sV834s" target="_blank"><span class="play-icon">▶</span> Full Arm Swing</a></li>
+          </ul>
+        </article>
+
+        <article class="improvement-card">
+          <h3><img src="vb-net.svg" alt="Set" class="skill-icon" /> Tipping</h3>
+          <ul class="video-list">
+            <li><a href="https://www.youtube.com/watch?v=jnEA9sV834s" target="_blank"><span class="play-icon">▶</span> How to Tip</a></li>
+          </ul>
+        </article>
+      </div>
+      <p class="improvement-credit">Video tutorials by Elevate Yourself</p>
     </section>
   </main>
   <script src="app.js"></script>

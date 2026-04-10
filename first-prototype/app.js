@@ -375,5 +375,36 @@
   serveTypeA.addEventListener("change", updateCompareResult);
   serveTypeB.addEventListener("change", updateCompareResult);
 
+  const serveVideos = {
+    "underhand": "https://www.youtube.com/watch?v=xBNNxQiR2VI",
+    "overhand": "https://www.youtube.com/watch?v=bXEDuPePTCs",
+    "float": "https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s",
+    "jump-float": "https://www.youtube.com/watch?v=TX8a7nWlbiw",
+    "jump-topspin": "https://www.youtube.com/watch?v=fGSgD2k-NEU&t=137s"
+  };
+
+  function updateServeVideoLink(dropdown, containerId) {
+    const container = document.getElementById(containerId);
+    const videoBtn = container.querySelector(".serve-video-btn");
+    if (!videoBtn) return;
+    const serveType = dropdown.value;
+    if (serveType && serveVideos[serveType]) {
+      videoBtn.href = serveVideos[serveType];
+      videoBtn.style.display = "inline-flex";
+    } else {
+      videoBtn.style.display = "none";
+    }
+  }
+
+  serveTypeA.addEventListener("change", function () {
+    updateServeVideoLink(serveTypeA, "serve-a");
+    updateCompareResult();
+  });
+
+  serveTypeB.addEventListener("change", function () {
+    updateServeVideoLink(serveTypeB, "serve-b");
+    updateCompareResult();
+  });
+
   window.addEventListener("resize", drawChart);
 })();
