@@ -478,6 +478,7 @@ button[type="submit"]:active {
 }
 
 #improvement-section,
+#drills-section,
 #rotations-section {
   grid-column: 1 / -1;
 }
@@ -560,8 +561,15 @@ button[type="submit"]:active {
   font-size: .85rem;
 }
 
+.tools-needed {
+  margin: .75rem 0 .25rem;
+  font-size: .75rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .video-creator {
-  margin: .5rem 0 0;
+  margin: .25rem 0 0;
   font-size: .8rem;
   color: var(--text-muted);
   font-style: italic;
