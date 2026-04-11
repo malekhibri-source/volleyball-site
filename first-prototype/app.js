@@ -1,279 +1,472 @@
 (function () {
-  const STORAGE_KEY = "volleyball-sessions";
-
-  const form = document.getElementById("session-form");
-  const servePercentEl = document.getElementById("serve-percent-value");
-  const acePercentEl = document.getElementById("ace-percent-value");
-  const spikePercentEl = document.getElementById("spike-percent-value");
-  const passPercentEl = document.getElementById("pass-percent-value");
-  const totalsEl = document.getElementById("totals-value");
-  const historyListEl = document.getElementById("session-history-list");
-  const chartCanvas = document.getElementById("performance-chart");
-
-  const serveTypeA = document.getElementById("serve-type-a");
-  const serveTypeB = document.getElementById("serve-type-b");
-  const attemptsA = document.querySelectorAll("#serve-a .attempt-btn");
-  const attemptsB = document.querySelectorAll("#serve-b .attempt-btn");
-  const scoreAEl = document.getElementById("score-a");
-  const scoreBEl = document.getElementById("score-b");
-  const compareResult = document.getElementById("compare-result");
+  const SESSIONS_KEY = "volleyball-sessions";
+  const TRAINING_LOG_KEY = "volleyball-training-log";
 
   let sessions = loadSessions();
+  let trainingLogs = loadTrainingLogs();
+  let currentDrills = [];
+  let chart = null;
 
-  clearOldData();
-  render();
+  const serveAData = Array(10).fill(0);
+  const serveBData = Array(10).fill(0);
 
-  function clearOldData() {
-    window.localStorage.removeItem(STORAGE_KEY);
+  const drillsDB = [
+    { name: "Wall Passing", skill: "passing", difficulty: "beginner", tools: ["ball", "wall"] },
+    { name: "Partner Passing", skill: "passing", difficulty: "beginner", tools: ["ball", "partner"] },
+    { name: "Serve Receive Drills", skill: "passing", difficulty: "intermediate", tools: ["ball", "net", "partner"] },
+    { name: "X-Ball Serving", skill: "serving", difficulty: "beginner", tools: ["ball", "net"] },
+    { name: "Float Serve Practice", skill: "serving", difficulty: "beginner", tools: ["ball", "wall"] },
+    { name: "Jump Serve Approach", skill: "serving", difficulty: "advanced", tools: ["ball", "net"] },
+    { name: "Wall Setting", skill: "setting", difficulty: "beginner", tools: ["ball", "wall"] },
+    { name: "Partner Setting", skill: "setting", difficulty: "beginner", tools: ["ball", "partner"] },
+    { name: "Setting Gates", skill: "setting", difficulty: "intermediate", tools: ["ball", "net"] },
+    { name: "Approach & Hit", skill: "spiking", difficulty: "beginner", tools: ["ball", "wall"] },
+    { name: "Tooling Drills", skill: "spiking", difficulty: "intermediate", tools: ["ball", "net", "partner"] },
+    { name: "1-on-1 Blocking", skill: "spiking", difficulty: "advanced", tools: ["ball", "net", "partner"] },
+    { name: "Tip & Roll", skill: "spiking", difficulty: "intermediate", tools: ["ball", "net", "partner"] }
+  ];
+
+  const videosDB = [
+    { title: "Wall Passing Drills", url: "https://www.youtube.com/shorts/6livtunhlOc", skill: "passing", creator: "Kristy Tekavec" },
+    { title: "Passing Fundamentals", url: "https://www.youtube.com/watch?v=gOgfoEGUDCA", skill: "passing", creator: "Elevate Yourself" },
+    { title: "Advanced Passing", url: "https://www.youtube.com/watch?v=Ymx-bj5WbK4", skill: "passing", creator: "Elevate Yourself" },
+    { title: "Setting Drills", url: "https://www.youtube.com/shorts/6cTmSAgP5ho", skill: "setting", creator: "Elevate Yourself" },
+    { title: "Setting Drills (Adv)", url: "https://www.youtube.com/watch?v=RfoAU5uMro8", skill: "setting", creator: "DavidSeybering95" },
+    { title: "Setting Fundamentals", url: "https://www.youtube.com/watch?v=ZK4lqv5NxXA", skill: "setting", creator: "Natke Volleyball" },
+    { title: "Spiking Drills", url: "https://www.youtube.com/shorts/NyR4cJ2pYa8", skill: "spiking", creator: "Kristy Tekavec" },
+    { title: "Spiking (Partner)", url: "https://www.youtube.com/watch?v=ZK4lqv5NxXA", skill: "spiking", creator: "Wicked Volleyball" },
+    { title: "Spike Approach", url: "https://www.youtube.com/watch?v=EpmR0edNOgo", skill: "spiking", creator: "Coach Chijo" },
+    { title: "Spiking Footwork", url: "https://www.youtube.com/watch?v=B7vbjJ2wQQQ", skill: "spiking", creator: "Elevate Yourself" },
+    { title: "Serve Drills", url: "https://www.youtube.com/shorts/xJfOgw1dMWM", skill: "serving", creator: "Coach Chijo" },
+    { title: "Jump Serve Drills", url: "https://www.youtube.com/watch?v=rKoCO5tIPg8", skill: "serving", creator: "Elevate Yourself" },
+    { title: "Float Serve", url: "https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s", skill: "serving", creator: "Elevate Yourself" },
+    { title: "Jump Float Serve", url: "https://www.youtube.com/watch?v=TX8a7nWlbiw", skill: "serving", creator: "Elevate Yourself" },
+    { title: "Jump Topspin Serve", url: "https://www.youtube.com/watch?v=fGSgD2k-NEU&t=137s", skill: "serving", creator: "Elevate Yourself" }
+  ];
+
+  const serveVideos = {
+    "float": "https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s",
+    "jump-float": "https://www.youtube.com/watch?v=TX8a7nWlbiw",
+    "jump-topspin": "https://www.youtube.com/watch?v=fGSgD2k-NEU&t=137s",
+    "underhand": "https://www.youtube.com/watch?v=xBNNxQiR2VI",
+    "overhand": "https://www.youtube.com/watch?v=bXEDuPePTCs"
+  };
+
+  const focusTips = {
+    serving: "Focus on contacting the ball at the highest point and following through toward your target",
+    spiking: "Contact the ball in front of your body and snap your wrist at contact for more power",
+    passing: "Keep your platform steady and angle your arms to pass to the setter's target",
+    setting: "Use your legs, not just your arms. Get low and push through the ball"
+  };
+
+  const quickVideosDB = {
+    serving: [
+      { title: "Float Serve", url: "https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s" },
+      { title: "Jump Serve", url: "https://www.youtube.com/watch?v=TX8a7nWlbiw" },
+      { title: "Jump Topspin", url: "https://www.youtube.com/watch?v=fGSgD2k-NEU&t=137s" }
+    ],
+    spiking: [
+      { title: "Spiking Drills", url: "https://www.youtube.com/shorts/NyR4cJ2pYa8" },
+      { title: "Spike Approach", url: "https://www.youtube.com/watch?v=EpmR0edNOgo" },
+      { title: "Arm Swing", url: "https://www.youtube.com/watch?v=bWVWKnB04ho" }
+    ],
+    passing: [
+      { title: "Wall Passing", url: "https://www.youtube.com/shorts/6livtunhlOc" },
+      { title: "Passing Fundamentals", url: "https://www.youtube.com/watch?v=gOgfoEGUDCA" }
+    ],
+    setting: [
+      { title: "Setting Drills", url: "https://www.youtube.com/shorts/6cTmSAgP5ho" },
+      { title: "Setting Fundamentals", url: "https://www.youtube.com/watch?v=ZK4lqv5NxXA" }
+    ]
+  };
+
+  init();
+
+  function init() {
+    loadPositionSettings();
+    setDefaultDate();
+    renderDashboard();
+    renderDrillsBySkill();
+    renderVideosBySkill();
+    renderSessionHistory();
+    renderTrainingHistory();
+    setupEventListeners();
   }
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  function loadPositionSettings() {
+    try {
+      const settings = JSON.parse(localStorage.getItem("volleyball-position") || "null");
+      if (settings) {
+        document.getElementById("pos-serving").checked = settings.serving !== false;
+        document.getElementById("pos-spiking").checked = settings.spiking !== false;
+        document.getElementById("pos-passing").checked = settings.passing !== false;
+        document.getElementById("pos-setting").checked = settings.setting !== false;
+      }
+    } catch (e) {}
+  }
 
-    const formData = new FormData(form);
-    const session = {
-      id: Date.now(),
-      date: String(formData.get("date") || ""),
-      serveAttempts: Number(formData.get("serveAttempts") || 0),
-      serveMade: Number(formData.get("serveMade") || 0),
-      spikeAttempts: Number(formData.get("spikeAttempts") || 0),
-      spikeMade: Number(formData.get("spikeMade") || 0),
-      serveType: String(formData.get("serveType") || ""),
-      acesCount: Number(formData.get("acesCount") || 0),
-      passesReceived: Number(formData.get("passesReceived") || 0),
-      passesWell: Number(formData.get("passesWell") || 0),
-      setsGiven: Number(formData.get("setsGiven") || 0),
-      setsTipped: Number(formData.get("setsTipped") || 0),
-      setsHit: Number(formData.get("setsHit") || 0),
-      pointsWon: Number(formData.get("pointsWon") || 0),
+  function savePositionSettings() {
+    const settings = {
+      serving: document.getElementById("pos-serving").checked,
+      spiking: document.getElementById("pos-spiking").checked,
+      passing: document.getElementById("pos-passing").checked,
+      setting: document.getElementById("pos-setting").checked
     };
+    localStorage.setItem("volleyball-position", JSON.stringify(settings));
+  }
 
-    if (!session.date) {
-      return;
-    }
+  function getActiveSkills() {
+    return {
+      serving: document.getElementById("pos-serving").checked,
+      spiking: document.getElementById("pos-spiking").checked,
+      passing: document.getElementById("pos-passing").checked,
+      setting: document.getElementById("pos-setting").checked
+    };
+  }
 
-    if (session.serveMade > session.serveAttempts || session.spikeMade > session.spikeAttempts) {
-      window.alert("Made values cannot be greater than attempts.");
-      return;
-    }
-
-    if (session.passesWell > session.passesReceived) {
-      window.alert("Passes well cannot be greater than passes received.");
-      return;
-    }
-
-    sessions.push(session);
-    sessions.sort(function (a, b) {
-      return new Date(a.date).getTime() - new Date(b.date).getTime();
-    });
-
-    persistSessions();
-    render();
-    form.reset();
-  });
+  function setDefaultDate() {
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("session-date").value = today;
+    document.getElementById("training-date").value = today;
+  }
 
   function loadSessions() {
     try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      const parsed = raw ? JSON.parse(raw) : [];
-      return Array.isArray(parsed) ? parsed : [];
-    } catch (error) {
+      const raw = localStorage.getItem(SESSIONS_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
       return [];
     }
   }
 
-  function persistSessions() {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
+  function loadTrainingLogs() {
+    try {
+      const raw = localStorage.getItem(TRAINING_LOG_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
   }
 
-  function render() {
-    const totals = sessions.reduce(
-      function (acc, current) {
-        acc.serveAttempts += current.serveAttempts;
-        acc.serveMade += current.serveMade;
-        acc.spikeAttempts += current.spikeAttempts;
-        acc.spikeMade += current.spikeMade;
-        acc.acesCount += current.acesCount;
-        acc.passesReceived += current.passesReceived;
-        acc.passesWell += current.passesWell;
-        return acc;
-      },
-      { serveAttempts: 0, serveMade: 0, spikeAttempts: 0, spikeMade: 0, acesCount: 0, passesReceived: 0, passesWell: 0 }
-    );
-
-    servePercentEl.textContent = formatPercent(totals.serveMade, totals.serveAttempts);
-    acePercentEl.textContent = formatPercent(totals.acesCount, totals.serveAttempts);
-    spikePercentEl.textContent = formatPercent(totals.spikeMade, totals.spikeAttempts);
-    passPercentEl.textContent = formatPercent(totals.passesWell, totals.passesReceived);
-    totalsEl.textContent = sessions.length + " sessions";
-
-    renderHistory();
-    drawChart();
+  function saveSessions() {
+    localStorage.setItem(SESSIONS_KEY, JSON.stringify(sessions));
   }
 
-  function renderHistory() {
-    historyListEl.innerHTML = "";
+  function saveTrainingLogs() {
+    localStorage.setItem(TRAINING_LOG_KEY, JSON.stringify(trainingLogs));
+  }
 
+  function getStats() {
     if (sessions.length === 0) {
-      const emptyItem = document.createElement("li");
-      emptyItem.className = "history-empty";
-      emptyItem.textContent = "No sessions recorded yet.";
-      historyListEl.appendChild(emptyItem);
+      return {
+        servePercent: 0,
+        serveErrorPercent: 0,
+        acePercent: 0,
+        aceCount: 0,
+        spikePercent: 0,
+        spikeErrorPercent: 0,
+        passPercent: 0,
+        totalSessions: 0
+      };
+    }
+
+    let serveAttempts = 0, serveMade = 0, serveErrors = 0, acesCount = 0;
+    let spikeAttempts = 0, spikeMade = 0, spikeErrors = 0;
+    let passesReceived = 0, passesWell = 0;
+
+    sessions.forEach(s => {
+      serveAttempts += s.serveAttempts || 0;
+      serveMade += s.serveMade || 0;
+      serveErrors += s.serveErrors || 0;
+      acesCount += s.acesCount || 0;
+      spikeAttempts += s.spikeAttempts || 0;
+      spikeMade += s.spikeMade || 0;
+      spikeErrors += s.spikeErrors || 0;
+      passesReceived += s.passesReceived || 0;
+      passesWell += s.passesWell || 0;
+    });
+
+    return {
+      servePercent: serveAttempts > 0 ? (serveMade / serveAttempts) * 100 : 0,
+      serveErrorPercent: serveAttempts > 0 ? (serveErrors / serveAttempts) * 100 : 0,
+      acePercent: serveAttempts > 0 ? (acesCount / serveAttempts) * 100 : 0,
+      aceCount: acesCount,
+      spikePercent: spikeAttempts > 0 ? (spikeMade / spikeAttempts) * 100 : 0,
+      spikeErrorPercent: spikeAttempts > 0 ? (spikeErrors / spikeAttempts) * 100 : 0,
+      passPercent: passesReceived > 0 ? (passesWell / passesReceived) * 100 : 0,
+      totalSessions: sessions.length
+    };
+  }
+
+  function detectWeakness(stats) {
+    const activeSkills = getActiveSkills();
+    const skills = [];
+    
+    if (activeSkills.serving && stats.servePercent > 0) skills.push({ name: "serving", rate: stats.servePercent });
+    if (activeSkills.spiking && stats.spikePercent > 0) skills.push({ name: "spiking", rate: stats.spikePercent });
+    if (activeSkills.passing && stats.passPercent > 0) skills.push({ name: "passing", rate: stats.passPercent });
+
+    if (skills.length === 0) return null;
+    
+    skills.sort((a, b) => a.rate - b.rate);
+    return skills[0];
+  }
+
+  function renderDashboard() {
+    const stats = getStats();
+    const weakness = detectWeakness(stats);
+
+    document.getElementById("serve-percent-value").textContent = stats.servePercent.toFixed(1) + "%";
+    document.getElementById("serve-errors").textContent = stats.serveErrorPercent.toFixed(1) + "% error";
+
+    document.getElementById("ace-percent-value").textContent = stats.acePercent.toFixed(1) + "%";
+    document.getElementById("ace-count").textContent = stats.aceCount + " aces";
+
+    document.getElementById("spike-percent-value").textContent = stats.spikePercent.toFixed(1) + "%";
+    document.getElementById("spike-errors").textContent = stats.spikeErrorPercent.toFixed(1) + "% error";
+
+    document.getElementById("pass-percent-value").textContent = stats.passPercent.toFixed(1) + "%";
+
+    document.getElementById("totals-value").textContent = sessions.length + " sessions";
+
+    renderFocus(stats, weakness);
+    renderWeaknessAlert(weakness);
+    renderChart();
+  }
+
+  function renderFocus(stats, weakness) {
+    const focusSkillEl = document.getElementById("focus-skill");
+    const focusTipEl = document.getElementById("focus-tip");
+    const quickVideosEl = document.getElementById("quick-videos-list");
+
+    if (!weakness || sessions.length < 3) {
+      focusSkillEl.textContent = sessions.length < 3 
+        ? "Keep tracking (" + sessions.length + "/3 sessions)" 
+        : "Add more variety to get focus";
+      focusTipEl.textContent = sessions.length < 3
+        ? "Log at least 3 sessions to unlock personalized focus"
+        : "Log sessions for different skills to get a focus";
+      quickVideosEl.innerHTML = "<p class='text-muted'>Add sessions to see quick videos</p>";
       return;
     }
 
-    sessions
-      .slice()
-      .reverse()
-      .forEach(function (session) {
-        const item = document.createElement("li");
-        const serve = formatPercent(session.serveMade, session.serveAttempts);
-        const ace = formatPercent(session.acesCount, session.serveAttempts);
-        const spike = formatPercent(session.spikeMade, session.spikeAttempts);
-        const pass = formatPercent(session.passesWell, session.passesReceived);
+    focusSkillEl.textContent = capitalizeFirst(weakness.name);
+    focusTipEl.textContent = focusTips[weakness.name] || "Practice consistently to improve";
 
-        item.innerHTML = `
-          <span><strong>${session.date}</strong></span>
-          <span style="color: var(--text-muted); font-size: 0.85rem;">
-            Serve: ${session.serveMade}/${session.serveAttempts} (${serve}) | 
-            Ace: ${session.acesCount} (${ace}) | 
-            Spike: ${session.spikeMade}/${session.spikeAttempts} (${spike}) | 
-            Pass: ${session.passesWell}/${session.passesReceived} (${pass})
+    const focusVideos = quickVideosDB[weakness.name] || [];
+    quickVideosEl.innerHTML = focusVideos.map(v => 
+      "<a href='" + v.url + "' target='_blank' class='quick-video-link'>▶ " + v.title + "</a>"
+    ).join("");
+  }
+
+  function renderWeaknessAlert(weakness) {
+    const alert = document.getElementById("weakness-alert");
+    const msg = document.getElementById("weakness-message");
+
+    if (!weakness || sessions.length < 3) {
+      alert.style.display = "none";
+      return;
+    }
+
+    alert.style.display = "flex";
+    msg.textContent = "Your weakest skill: " + capitalizeFirst(weakness.name) + " (" + weakness.rate.toFixed(1) + "% success rate)";
+  }
+
+  function renderDrillsBySkill() {
+    const skills = ["passing", "serving", "spiking", "setting"];
+    
+    skills.forEach(skill => {
+      const container = document.getElementById("drills-" + skill);
+      if (!container) return;
+      
+      const skillDrills = drillsDB.filter(d => d.skill === skill);
+      container.innerHTML = skillDrills.map(drill => `
+        <li>
+          <span class="drill-name">${drill.name}</span>
+          <span class="drill-meta">
+            <span class="drill-difficulty ${drill.difficulty}">${drill.difficulty}</span>
+            <span class="drill-tools">${drill.tools.join(", ")}</span>
           </span>
-        `;
-        historyListEl.appendChild(item);
-      });
-  }
-
-  function drawChart() {
-    if (!chartCanvas) {
-      return;
-    }
-
-    const dpr = window.devicePixelRatio || 1;
-    const width = chartCanvas.clientWidth || 600;
-    const height = 280;
-
-    chartCanvas.width = Math.floor(width * dpr);
-    chartCanvas.height = Math.floor(height * dpr);
-
-    const ctx = chartCanvas.getContext("2d");
-    if (!ctx) {
-      return;
-    }
-
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, width, height);
-
-    if (sessions.length === 0) {
-      ctx.fillStyle = "#9CA3AF";
-      ctx.font = "14px Segoe UI";
-      ctx.fillText("Add sessions to see chart data.", 12, 24);
-      return;
-    }
-
-    const padding = { top: 18, right: 16, bottom: 26, left: 36 };
-    const chartW = width - padding.left - padding.right;
-    const chartH = height - padding.top - padding.bottom;
-
-    ctx.strokeStyle = "#374151";
-    ctx.lineWidth = 1;
-    ctx.strokeRect(padding.left, padding.top, chartW, chartH);
-
-    drawGridLines(ctx, padding, chartW, chartH);
-
-    const serveSeries = sessions.map(function (session) {
-      return toPercent(session.serveMade, session.serveAttempts);
-    });
-    const spikeSeries = sessions.map(function (session) {
-      return toPercent(session.spikeMade, session.spikeAttempts);
-    });
-    const passSeries = sessions.map(function (session) {
-      return toPercent(session.passesWell, session.passesReceived);
-    });
-
-    drawSeries(ctx, serveSeries, padding, chartW, chartH, "#1E90FF");
-    drawSeries(ctx, spikeSeries, padding, chartW, chartH, "#10B981");
-    drawSeries(ctx, passSeries, padding, chartW, chartH, "#00E5FF");
-
-    ctx.fillStyle = "#1E90FF";
-    ctx.fillRect(width - 180, 12, 10, 10);
-    ctx.fillStyle = "#EAEAEA";
-    ctx.font = "12px Segoe UI";
-    ctx.fillText("Serve %", width - 165, 21);
-
-    ctx.fillStyle = "#10B981";
-    ctx.fillRect(width - 110, 12, 10, 10);
-    ctx.fillStyle = "#EAEAEA";
-    ctx.fillText("Spike %", width - 95, 21);
-
-    ctx.fillStyle = "#00E5FF";
-    ctx.fillRect(width - 40, 12, 10, 10);
-    ctx.fillStyle = "#EAEAEA";
-    ctx.fillText("Pass %", width - 25, 21);
-  }
-
-  function drawGridLines(ctx, padding, chartW, chartH) {
-    const marks = [0, 25, 50, 75, 100];
-
-    ctx.strokeStyle = "#374151";
-    ctx.fillStyle = "#9CA3AF";
-    ctx.font = "11px Segoe UI";
-
-    marks.forEach(function (mark) {
-      const y = padding.top + chartH - (mark / 100) * chartH;
-      ctx.beginPath();
-      ctx.moveTo(padding.left, y);
-      ctx.lineTo(padding.left + chartW, y);
-      ctx.stroke();
-      ctx.fillText(String(mark), 8, y + 4);
+        </li>
+      `).join("");
     });
   }
 
-  function drawSeries(ctx, values, padding, chartW, chartH, color) {
-    const count = values.length;
-    const stepX = count > 1 ? chartW / (count - 1) : 0;
+  function renderVideosBySkill() {
+    const skills = ["passing", "serving", "spiking", "setting"];
+    
+    skills.forEach(skill => {
+      const container = document.getElementById("videos-" + skill);
+      if (!container) return;
+      
+      const skillVideos = videosDB.filter(v => v.skill === skill);
+      container.innerHTML = skillVideos.map(video => `
+        <li>
+          <a href="${video.url}" target="_blank">
+            <span class="play-icon">▶</span> ${video.title}
+          </a>
+        </li>
+      `).join("");
+    });
+  }
 
-    ctx.strokeStyle = color;
-    ctx.fillStyle = color;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
+  function renderChart() {
+    const ctx = document.getElementById("trends-chart");
+    if (!ctx) return;
 
-    values.forEach(function (value, index) {
-      const x = padding.left + index * stepX;
-      const y = padding.top + chartH - (value / 100) * chartH;
-      if (index === 0) {
-        ctx.moveTo(x, y);
+    if (chart) chart.destroy();
+
+    const recentSessions = sessions.slice(-10);
+    if (recentSessions.length === 0) return;
+
+    const labels = recentSessions.map(s => s.date.slice(5));
+    const serveData = recentSessions.map(s => s.serveAttempts > 0 ? (s.serveMade / s.serveAttempts) * 100 : null);
+    const spikeData = recentSessions.map(s => s.spikeAttempts > 0 ? (s.spikeMade / s.spikeAttempts) * 100 : null);
+    const passData = recentSessions.map(s => s.passesReceived > 0 ? (s.passesWell / s.passesReceived) * 100 : null);
+
+    chart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: labels,
+        datasets: [
+          { label: "Serve %", data: serveData, borderColor: "#1E90FF", backgroundColor: "#1E90FF", tension: 0.3 },
+          { label: "Spike %", data: spikeData, borderColor: "#10B981", backgroundColor: "#10B981", tension: 0.3 },
+          { label: "Pass %", data: passData, borderColor: "#00E5FF", backgroundColor: "#00E5FF", tension: 0.3 }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { min: 0, max: 100, grid: { color: "#374151" } },
+          x: { grid: { color: "#374151" } }
+        },
+        plugins: {
+          legend: { labels: { color: "#EAEAEA" } }
+        }
+      }
+    });
+  }
+
+  function setupEventListeners() {
+    document.getElementById("session-form").addEventListener("submit", handleSessionSubmit);
+    document.getElementById("training-form").addEventListener("submit", handleTrainingSubmit);
+    document.getElementById("add-drill-btn").addEventListener("click", handleAddDrill);
+
+    document.getElementById("pos-serving").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
+    document.getElementById("pos-spiking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
+    document.getElementById("pos-passing").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
+    document.getElementById("pos-setting").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
+
+    document.getElementById("serve-type").addEventListener("change", function() {
+      const link = document.getElementById("serve-type-link");
+      if (this.value && serveVideos[this.value]) {
+        link.href = serveVideos[this.value];
+        link.style.display = "inline-flex";
       } else {
-        ctx.lineTo(x, y);
+        link.style.display = "none";
       }
     });
 
-    ctx.stroke();
-
-    values.forEach(function (value, index) {
-      const x = padding.left + index * stepX;
-      const y = padding.top + chartH - (value / 100) * chartH;
-      ctx.beginPath();
-      ctx.arc(x, y, 3, 0, Math.PI * 2);
-      ctx.fill();
-    });
+    setupServeComparison();
   }
 
-  function toPercent(made, attempts) {
-    if (attempts <= 0) {
-      return 0;
-    }
-    return (made / attempts) * 100;
+  function handleSessionSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const session = {
+      id: Date.now(),
+      date: formData.get("date"),
+      serveAttempts: parseInt(formData.get("serveAttempts")) || 0,
+      serveMade: parseInt(formData.get("serveMade")) || 0,
+      serveErrors: 0,
+      acesCount: parseInt(formData.get("acesCount")) || 0,
+      spikeAttempts: parseInt(formData.get("spikeAttempts")) || 0,
+      spikeMade: parseInt(formData.get("spikeMade")) || 0,
+      spikeErrors: parseInt(formData.get("spikeErrors")) || 0,
+      passesReceived: parseInt(formData.get("passesReceived")) || 0,
+      passesWell: parseInt(formData.get("passesWell")) || 0,
+      setsGiven: parseInt(formData.get("setsGiven")) || 0,
+      setsTipped: parseInt(formData.get("setsTipped")) || 0,
+      setsHit: parseInt(formData.get("setsHit")) || 0
+    };
+
+    if (!session.date) return;
+
+    sessions.push(session);
+    sessions.sort((a, b) => new Date(a.date) - new Date(b.date));
+    saveSessions();
+    
+    form.reset();
+    setDefaultDate();
+    renderDashboard();
+    renderSessionHistory();
   }
 
-  function formatPercent(made, attempts) {
-    const value = toPercent(made, attempts);
-    return value.toFixed(1) + "%";
+  function handleTrainingSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const log = {
+      id: Date.now(),
+      date: formData.get("date"),
+      focusSkill: formData.get("focusSkill"),
+      drillsCompleted: currentDrills,
+      feedback: {
+        wentWell: formData.get("feedbackWell"),
+        feltOff: formData.get("feedbackOff")
+      }
+    };
+
+    if (!log.date || !log.focusSkill) return;
+
+    trainingLogs.push(log);
+    trainingLogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+    saveTrainingLogs();
+
+    currentDrills = [];
+    form.reset();
+    setDefaultDate();
+    document.getElementById("drills-list").innerHTML = "";
+    renderTrainingHistory();
   }
 
-  const serveAData = Array(10).fill(0);
-  const serveBData = Array(10).fill(0);
+  function handleAddDrill() {
+    const name = document.getElementById("drill-name").value.trim();
+    const reps = parseInt(document.getElementById("drill-reps").value) || 0;
+    const notes = document.getElementById("drill-notes").value.trim();
+
+    if (!name) return;
+
+    currentDrills.push({ name, reps, notes });
+    
+    const list = document.getElementById("drills-list");
+    const item = document.createElement("li");
+    item.innerHTML = "<span>" + name + "</span><span>" + reps + " reps</span><span>" + (notes || "-") + "</span>";
+    list.appendChild(item);
+
+    document.getElementById("drill-name").value = "";
+    document.getElementById("drill-reps").value = "0";
+    document.getElementById("drill-notes").value = "";
+  }
+
+  function setupServeComparison() {
+    const attemptsA = document.querySelectorAll("#serve-a .attempt-btn");
+    const attemptsB = document.querySelectorAll("#serve-b .attempt-btn");
+    const serveTypeA = document.getElementById("serve-type-a");
+    const serveTypeB = document.getElementById("serve-type-b");
+    const scoreAEl = document.getElementById("score-a");
+    const scoreBEl = document.getElementById("score-b");
+
+    attemptsA.forEach(btn => btn.addEventListener("click", () => updateAttempt(btn, serveAData, scoreAEl)));
+    attemptsB.forEach(btn => btn.addEventListener("click", () => updateAttempt(btn, serveBData, scoreBEl)));
+
+    serveTypeA.addEventListener("change", () => updateServeVideoLink(serveTypeA, "serve-a"));
+    serveTypeB.addEventListener("change", () => updateServeVideoLink(serveTypeB, "serve-b"));
+  }
 
   function updateAttempt(btn, dataArray, displayEl) {
     const index = parseInt(btn.dataset.index, 10);
@@ -289,15 +482,7 @@
     btn.textContent = state.label;
     btn.className = "attempt-btn " + state.cls;
     
-    const score = dataArray.reduce(function (a, b) { 
-      const s = states[a] || { score: 0 };
-      return s.score + (states[b] ? 0 : 0);
-    }, 0);
-    
-    const totalScore = dataArray.reduce(function (acc, val) {
-      return acc + states[val].score;
-    }, 0);
-    
+    const totalScore = dataArray.reduce((acc, val) => acc + states[val].score, 0);
     displayEl.querySelector(".score").textContent = totalScore;
     
     if (totalScore > 0) {
@@ -311,21 +496,10 @@
     updateCompareResult();
   }
 
-  attemptsA.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      updateAttempt(btn, serveAData, scoreAEl);
-    });
-  });
-
-  attemptsB.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      updateAttempt(btn, serveBData, scoreBEl);
-    });
-  });
-
   function updateCompareResult() {
-    const typeA = serveTypeA.value;
-    const typeB = serveTypeB.value;
+    const typeA = document.getElementById("serve-type-a").value;
+    const typeB = document.getElementById("serve-type-b").value;
+    const compareResult = document.getElementById("compare-result");
     
     if (!typeA || !typeB) {
       compareResult.style.display = "none";
@@ -339,49 +513,22 @@
       { score: 1, label: "ACE", cls: "ace" }
     ];
     
-    const scoreA = serveAData.reduce(function (acc, val) {
-      return acc + states[val].score;
-    }, 0);
-    
-    const scoreB = serveBData.reduce(function (acc, val) {
-      return acc + states[val].score;
-    }, 0);
+    const scoreA = serveAData.reduce((acc, val) => acc + states[val].score, 0);
+    const scoreB = serveBData.reduce((acc, val) => acc + states[val].score, 0);
     
     compareResult.style.display = "block";
     
     if (scoreA > scoreB) {
-      document.getElementById("winner-text").textContent = "🏆 Recommended: " + formatServeType(typeA);
+      document.getElementById("winner-text").textContent = "In a game, use " + formatServeType(typeA) + " - your most confident serve";
       document.getElementById("score-diff").textContent = "Score: " + scoreA + " vs " + scoreB;
     } else if (scoreB > scoreA) {
-      document.getElementById("winner-text").textContent = "🏆 Recommended: " + formatServeType(typeB);
+      document.getElementById("winner-text").textContent = "In a game, use " + formatServeType(typeB) + " - your most confident serve";
       document.getElementById("score-diff").textContent = "Score: " + scoreA + " vs " + scoreB;
     } else {
-      document.getElementById("winner-text").textContent = "🤝 It's a tie! Both serves scored " + scoreA;
+      document.getElementById("winner-text").textContent = "It's a tie! Both serves scored " + scoreA;
       document.getElementById("score-diff").textContent = "";
     }
   }
-
-  function formatServeType(type) {
-    const types = {
-      "underhand": "Underhand",
-      "overhand": "Overhand",
-      "float": "Float",
-      "jump-float": "Jump Float",
-      "jump-topspin": "Jump Topspin"
-    };
-    return types[type] || type;
-  }
-
-  serveTypeA.addEventListener("change", updateCompareResult);
-  serveTypeB.addEventListener("change", updateCompareResult);
-
-  const serveVideos = {
-    "underhand": "https://www.youtube.com/watch?v=xBNNxQiR2VI",
-    "overhand": "https://www.youtube.com/watch?v=bXEDuPePTCs",
-    "float": "https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s",
-    "jump-float": "https://www.youtube.com/watch?v=TX8a7nWlbiw",
-    "jump-topspin": "https://www.youtube.com/watch?v=fGSgD2k-NEU&t=137s"
-  };
 
   function updateServeVideoLink(dropdown, containerId) {
     const container = document.getElementById(containerId);
@@ -396,15 +543,64 @@
     }
   }
 
-  serveTypeA.addEventListener("change", function () {
-    updateServeVideoLink(serveTypeA, "serve-a");
-    updateCompareResult();
-  });
+  function renderSessionHistory() {
+    const list = document.getElementById("session-history-list");
+    
+    if (sessions.length === 0) {
+      list.innerHTML = "<li class='history-empty'>No sessions recorded yet.</li>";
+      return;
+    }
 
-  serveTypeB.addEventListener("change", function () {
-    updateServeVideoLink(serveTypeB, "serve-b");
-    updateCompareResult();
-  });
+    list.innerHTML = sessions.slice().reverse().map(s => {
+      const serve = s.serveAttempts > 0 ? (s.serveMade / s.serveAttempts * 100).toFixed(1) + "%" : "0%";
+      const spike = s.spikeAttempts > 0 ? (s.spikeMade / s.spikeAttempts * 100).toFixed(1) + "%" : "0%";
+      const pass = s.passesReceived > 0 ? (s.passesWell / s.passesReceived * 100).toFixed(1) + "%" : "0%";
+      const aces = s.acesCount || 0;
+      
+      return `
+        <li>
+          <span><strong>${s.date}</strong></span>
+          <span style="color: var(--text-muted); font-size: 0.85rem;">
+            Serve: ${serve} | Ace: ${aces} | Spike: ${spike} | Pass: ${pass}
+          </span>
+        </li>
+      `;
+    }).join("");
+  }
 
-  window.addEventListener("resize", drawChart);
+  function renderTrainingHistory() {
+    const list = document.getElementById("training-history-list");
+    
+    if (trainingLogs.length === 0) {
+      list.innerHTML = "<li>No training logs yet</li>";
+      return;
+    }
+
+    list.innerHTML = trainingLogs.slice(0, 5).map(log => {
+      const drills = log.drillsCompleted.map(d => d.name + " (" + d.reps + ")").join(", ") || "No drills";
+      return `
+        <li>
+          <span class="history-date">${log.date}</span>
+          <span class="history-focus">Focus: ${capitalizeFirst(log.focusSkill)}</span>
+          <span class="history-drills">${drills}</span>
+          ${log.feedback.wentWell ? "<span class='history-feedback'>✓ " + log.feedback.wentWell + "</span>" : ""}
+        </li>
+      `;
+    }).join("");
+  }
+
+  function capitalizeFirst(str) {
+    return str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
+  }
+
+  function formatServeType(type) {
+    const types = {
+      "float": "Float",
+      "jump-float": "Jump Float",
+      "jump-topspin": "Jump Topspin",
+      "underhand": "Underhand",
+      "overhand": "Overhand"
+    };
+    return types[type] || type;
+  }
 })();

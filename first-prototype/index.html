@@ -3,159 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Volleyball Session Tracker</title>
+  <title>Volleyball Tracker - Digital Coach</title>
   <link rel="stylesheet" href="volley.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <main class="app-shell">
     <header class="app-header">
       <div class="header-content">
         <h1><span>Volley</span>Track</h1>
-        <p class="app-subtitle">Train daily. Track smarter.</p>
-      </div>
-      <div class="volleyball-gallery">
-        <img src="vb-ball.svg" alt="Volleyball" class="gallery-img" />
-        <img src="vb-net.svg" alt="Volleyball Net" class="gallery-img" />
-        <img src="vb-serve.svg" alt="Volleyball Serve" class="gallery-img" />
-        <img src="vb-spike.svg" alt="Volleyball Spike" class="gallery-img" />
+        <p class="app-subtitle">Your digital coach</p>
       </div>
     </header>
 
+    <section id="daily-focus-section" aria-labelledby="daily-focus-title">
+      <h2>🎯 Today's Focus</h2>
+      <div id="focus-message" class="focus-message">
+        <span id="focus-skill">Add sessions to get your focus</span>
+        <p id="focus-tip">Track your stats to unlock personalized training recommendations</p>
+      </div>
+      <div class="quick-videos" id="quick-videos">
+        <h3>📺 Quick Videos for Focus</h3>
+        <div class="quick-videos-list" id="quick-videos-list"></div>
+      </div>
+    </section>
+
+    <section id="settings-section" aria-labelledby="settings-title">
+      <h2>⚙️ My Position</h2>
+      <p class="section-subtitle">Uncheck skills you don't do (excluded from weakness detection)</p>
+      <div class="position-checkboxes">
+        <label class="position-checkbox">
+          <input type="checkbox" id="pos-serving" checked />
+          <span>Serving</span>
+        </label>
+        <label class="position-checkbox">
+          <input type="checkbox" id="pos-spiking" checked />
+          <span>Spiking</span>
+        </label>
+        <label class="position-checkbox">
+          <input type="checkbox" id="pos-passing" checked />
+          <span>Passing</span>
+        </label>
+        <label class="position-checkbox">
+          <input type="checkbox" id="pos-setting" checked />
+          <span>Setting</span>
+        </label>
+      </div>
+    </section>
+
+    <section id="dashboard-section" aria-labelledby="dashboard-title">
+      <h2>📊 Dashboard</h2>
+      <div class="stats-grid">
+        <article class="stat-card" id="stat-serve">
+          <h3>Serve %</h3>
+          <p class="stat-value" id="serve-percent-value">0%</p>
+          <p class="stat-sub" id="serve-errors">0% error</p>
+        </article>
+        <article class="stat-card" id="stat-ace">
+          <h3>Ace %</h3>
+          <p class="stat-value" id="ace-percent-value">0%</p>
+          <p class="stat-sub" id="ace-count">0 aces</p>
+        </article>
+        <article class="stat-card" id="stat-spike">
+          <h3>Spike %</h3>
+          <p class="stat-value" id="spike-percent-value">0%</p>
+          <p class="stat-sub" id="spike-errors">0% error</p>
+        </article>
+        <article class="stat-card" id="stat-pass">
+          <h3>Pass %</h3>
+          <p class="stat-value" id="pass-percent-value">0%</p>
+        </article>
+      </div>
+      <div class="weakness-alert" id="weakness-alert" style="display: none;">
+        <span class="weakness-icon">⚠️</span>
+        <span id="weakness-message">Your weakest skill: --</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="trends-chart"></canvas>
+      </div>
+      <div class="totals">
+        <p id="totals-value">0 sessions</p>
+      </div>
+    </section>
+
     <section id="session-form-section" aria-labelledby="session-form-title">
-      <h2>📝 Session Form</h2>
-      <p id="form-status-message" role="status" aria-live="polite" class="form-status-message">
-        Ready. Add your first session.
-      </p>
+      <h2>📝 Log Session</h2>
       <form id="session-form">
-        <div class="field-row">
+        <div class="form-row">
           <label for="session-date">Date</label>
           <input type="date" id="session-date" name="date" required />
         </div>
 
-        <div class="field-row-with-img">
-          <div class="field-img-label">
-            <img src="vb-serve.svg" alt="Serve" />
-            <label for="serve-attempts">Serve Attempts</label>
+        <div class="form-cards">
+          <div class="form-card">
+            <h3><img src="vb-serve.svg" alt="Serve" class="card-icon" /> Serving</h3>
+            <div class="form-row">
+              <label for="serve-attempts">Attempts</label>
+              <input type="number" id="serve-attempts" name="serveAttempts" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="serve-made">Made (In)</label>
+              <input type="number" id="serve-made" name="serveMade" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="serve-type">Serve Type</label>
+              <select id="serve-type" name="serveType">
+                <option value="">Select type</option>
+                <option value="underhand">Underhand</option>
+                <option value="overhand">Overhand</option>
+                <option value="float">Float</option>
+                <option value="jump-float">Jump Float</option>
+                <option value="jump-topspin">Jump Topspin</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="aces-count">Aces</label>
+              <input type="number" id="aces-count" name="acesCount" min="0" value="0" />
+            </div>
           </div>
-          <input type="number" id="serve-attempts" name="serveAttempts" min="0" step="1" required />
-        </div>
 
-        <div class="field-row-with-video">
-          <div class="field-label-group">
-            <label for="serve-type">Serve Type</label>
-            <a href="https://www.youtube.com/watch?v=xBNNxQiR2VI" target="_blank" class="video-link" title="Underhand serve tutorial">📺</a>
+          <div class="form-card">
+            <h3><img src="vb-spike.svg" alt="Spike" class="card-icon" /> Spiking</h3>
+            <div class="form-row">
+              <label for="spike-attempts">Attempts</label>
+              <input type="number" id="spike-attempts" name="spikeAttempts" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="spike-made">Kills (Made)</label>
+              <input type="number" id="spike-made" name="spikeMade" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="spike-errors-count">Errors (Out)</label>
+              <input type="number" id="spike-errors-count" name="spikeErrors" min="0" value="0" />
+            </div>
           </div>
-          <select id="serve-type" name="serveType" required>
-            <option value="">Select serve type</option>
-            <option value="underhand">Underhand</option>
-            <option value="overhand">Overhand</option>
-            <option value="float">Float</option>
-            <option value="jump-float">Jump Float</option>
-            <option value="jump-topspin">Jump Topspin</option>
-          </select>
-        </div>
 
-        <div class="field-row-with-img">
-          <div class="field-img-label">
-            <img src="vb-ball.svg" alt="Aces" />
-            <label for="aces-count">Aces</label>
+          <div class="form-card">
+            <h3><img src="vb-net.svg" alt="Pass" class="card-icon" /> Passing</h3>
+            <div class="form-row">
+              <label for="passes-received">Received</label>
+              <input type="number" id="passes-received" name="passesReceived" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="passes-well">Good/Perfect</label>
+              <input type="number" id="passes-well" name="passesWell" min="0" value="0" />
+            </div>
           </div>
-          <input type="number" id="aces-count" name="acesCount" min="0" step="1" value="0" required />
-        </div>
 
-        <div class="field-row">
-          <label for="serve-made">Serves In</label>
-          <input type="number" id="serve-made" name="serveMade" min="0" step="1" required />
-        </div>
-
-        <div class="field-row-with-img">
-          <div class="field-img-label">
-            <img src="vb-spike.svg" alt="Spike" />
-            <label for="spike-attempts">Spike Attempts</label>
-            <a href="https://www.youtube.com/watch?v=B7vbjJ2wQQQ" target="_blank" class="video-link" title="Spiking footwork tutorial">📺</a>
+          <div class="form-card">
+            <h3><img src="vb-net.svg" alt="Set" class="card-icon" /> Setting</h3>
+            <div class="form-row">
+              <label for="sets-given">Sets Given</label>
+              <input type="number" id="sets-given" name="setsGiven" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="sets-tipped">Tipped (Lost)</label>
+              <input type="number" id="sets-tipped" name="setsTipped" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="sets-hit">Kills (Hit)</label>
+              <input type="number" id="sets-hit" name="setsHit" min="0" value="0" />
+            </div>
           </div>
-          <input type="number" id="spike-attempts" name="spikeAttempts" min="0" step="1" required />
-        </div>
-
-        <div class="field-row">
-          <label for="spike-made">Spikes Made</label>
-          <input type="number" id="spike-made" name="spikeMade" min="0" step="1" required />
-        </div>
-
-        <div class="field-row-with-img">
-          <div class="field-img-label">
-            <img src="vb-net.svg" alt="Pass" />
-            <label for="passes-received">Passes Received</label>
-            <a href="https://www.youtube.com/watch?v=gOgfoEGUDCA" target="_blank" class="video-link" title="Passing tutorial">📺</a>
-          </div>
-          <input type="number" id="passes-received" name="passesReceived" min="0" step="1" value="0" required />
-        </div>
-
-        <div class="field-row">
-          <label for="passes-well">Passes Well (Good/Perfect)</label>
-          <input type="number" id="passes-well" name="passesWell" min="0" step="1" value="0" required />
-        </div>
-
-        <div class="field-row-with-img">
-          <div class="field-img-label">
-            <img src="vb-net.svg" alt="Sets" />
-            <label for="sets-given">Sets Given</label>
-          </div>
-          <input type="number" id="sets-given" name="setsGiven" min="0" step="1" value="0" required />
-        </div>
-
-        <div class="field-row">
-          <label for="sets-tipped">Sets Tipped (blocked)</label>
-          <input type="number" id="sets-tipped" name="setsTipped" min="0" step="1" value="0" required />
-        </div>
-
-        <div class="field-row">
-          <label for="sets-hit">Sets Hit (kill)</label>
-          <input type="number" id="sets-hit" name="setsHit" min="0" step="1" value="0" required />
-        </div>
-
-        <div class="field-row">
-          <label for="points-won">Points Won</label>
-          <input type="number" id="points-won" name="pointsWon" min="0" step="1" value="0" required />
         </div>
 
         <button type="submit">Save Session</button>
       </form>
     </section>
 
-    <section id="summary-section" aria-labelledby="summary-title">
-      <h2>📊 Summary</h2>
-      <div class="summary-cards">
-        <article class="summary-card" id="serve-percent-card">
-          <h3>Serve %</h3>
-          <p id="serve-percent-value">0%</p>
-        </article>
-
-        <article class="summary-card" id="ace-percent-card">
-          <h3>Ace %</h3>
-          <p id="ace-percent-value">0%</p>
-        </article>
-
-        <article class="summary-card" id="spike-percent-card">
-          <h3>Spike %</h3>
-          <p id="spike-percent-value">0%</p>
-        </article>
-
-        <article class="summary-card" id="pass-percent-card">
-          <h3>Pass %</h3>
-          <p id="pass-percent-value">0%</p>
-        </article>
-      </div>
-      <div style="margin-top: 1rem; text-align: center;">
-        <p id="totals-value" style="color: var(--text-muted); font-size: 0.9rem;">0 sessions</p>
-      </div>
-    </section>
-
     <section id="serve-compare-section" aria-labelledby="serve-compare-title">
       <h2>🎯 Find Your Game Serve</h2>
-      <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
-        Compare two serve types: do 10 of each, mark the result, and get a recommendation.
-      </p>
+      <p class="section-subtitle">Compare two serve types: do 10 of each, mark the result</p>
       <div class="serve-compare-grid">
         <div class="serve-option" id="serve-a">
           <h3>
@@ -167,7 +185,7 @@
               <option value="underhand">Underhand</option>
               <option value="overhand">Overhand</option>
             </select>
-            <a href="javascript:void(0)" target="_blank" class="video-link serve-video-btn" data-serve="float" data-target="serve-a" title="Watch tutorial">📺</a>
+            <a href="javascript:void(0)" target="_blank" class="video-link serve-video-btn" data-serve="float" data-target="serve-a">📺</a>
           </h3>
           <div class="attempt-row" id="attempts-a">
             <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
@@ -200,7 +218,7 @@
               <option value="underhand">Underhand</option>
               <option value="overhand">Overhand</option>
             </select>
-            <a href="javascript:void(0)" target="_blank" class="video-link serve-video-btn" data-serve="float" data-target="serve-b" title="Watch tutorial">📺</a>
+            <a href="javascript:void(0)" target="_blank" class="video-link serve-video-btn" data-serve="float" data-target="serve-b">📺</a>
           </h3>
           <div class="attempt-row" id="attempts-b">
             <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
@@ -230,117 +248,95 @@
       </div>
     </section>
 
-    <section id="session-history-section" aria-labelledby="session-history-title">
-      <h2>📜 Session History</h2>
-      <div class="history-container">
-        <ul id="session-history-list">
-          <li class="history-empty">No sessions recorded yet.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="chart-section" aria-labelledby="chart-title">
-      <h2>📈 Performance Chart</h2>
-      <div class="chart-container">
-        <canvas id="performance-chart" aria-label="Serve and spike performance by session"></canvas>
-      </div>
-    </section>
-
-    <section id="improvement-section" aria-labelledby="improvement-title">
-      <h2>📺 Improve Your Game</h2>
+    <section id="drills-section" aria-labelledby="drills-title">
+      <h2>🏋️ Drills by Skill</h2>
       <div class="improvement-grid">
         <article class="improvement-card">
           <h3><img src="vb-net.svg" alt="Pass" class="skill-icon" /> Passing</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/watch?v=gOgfoEGUDCA" target="_blank"><span class="play-icon">▶</span> Passing Fundamentals</a></li>
-            <li><a href="https://www.youtube.com/watch?v=Ymx-bj5WbK4" target="_blank"><span class="play-icon">▶</span> Advanced Passing</a></li>
-          </ul>
+          <ul class="video-list" id="drills-passing"></ul>
         </article>
-
         <article class="improvement-card">
           <h3><img src="vb-serve.svg" alt="Serve" class="skill-icon" /> Serving</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/watch?v=xBNNxQiR2VI" target="_blank"><span class="play-icon">▶</span> Underhand Serve</a></li>
-            <li><a href="https://www.youtube.com/watch?v=bXEDuPePTCs" target="_blank"><span class="play-icon">▶</span> Overhand Serve</a></li>
-            <li><a href="https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s" target="_blank"><span class="play-icon">▶</span> Float Serve</a></li>
-            <li><a href="https://www.youtube.com/watch?v=TX8a7nWlbiw" target="_blank"><span class="play-icon">▶</span> Jump Float Serve</a></li>
-            <li><a href="https://www.youtube.com/watch?v=fGSgD2k-NEU&t=137s" target="_blank"><span class="play-icon">▶</span> Jump Topspin Serve</a></li>
-          </ul>
+          <ul class="video-list" id="drills-serving"></ul>
         </article>
-
         <article class="improvement-card">
           <h3><img src="vb-spike.svg" alt="Spike" class="skill-icon" /> Spiking</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/watch?v=B7vbjJ2wQQQ" target="_blank"><span class="play-icon">▶</span> Spiking Footwork</a></li>
-            <li><a href="https://www.youtube.com/watch?v=u-WhjYYocBs" target="_blank"><span class="play-icon">▶</span> Approach &amp; Takeoff</a></li>
-            <li><a href="https://www.youtube.com/watch?v=bWVWKnB04ho" target="_blank"><span class="play-icon">▶</span> Arm Swing Mechanics</a></li>
-            <li><a href="https://www.youtube.com/watch?v=jnEA9sV834s" target="_blank"><span class="play-icon">▶</span> Full Arm Swing</a></li>
-          </ul>
+          <ul class="video-list" id="drills-spiking"></ul>
         </article>
-
-        <article class="improvement-card">
-          <h3><img src="vb-net.svg" alt="Set" class="skill-icon" /> Tipping</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/watch?v=jnEA9sV834s" target="_blank"><span class="play-icon">▶</span> How to Tip</a></li>
-          </ul>
-        </article>
-
         <article class="improvement-card">
           <h3><img src="vb-net.svg" alt="Set" class="skill-icon" /> Setting</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/watch?v=lEkr3qgIDlI" target="_blank"><span class="play-icon">▶</span> Setting Fundamentals</a></li>
-          </ul>
+          <ul class="video-list" id="drills-setting"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="videos-section" aria-labelledby="videos-title">
+      <h2>📺 Training Videos</h2>
+      <div class="improvement-grid">
+        <article class="improvement-card">
+          <h3><img src="vb-net.svg" alt="Pass" class="skill-icon" /> Passing</h3>
+          <ul class="video-list" id="videos-passing"></ul>
+        </article>
+        <article class="improvement-card">
+          <h3><img src="vb-serve.svg" alt="Serve" class="skill-icon" /> Serving</h3>
+          <ul class="video-list" id="videos-serving"></ul>
+        </article>
+        <article class="improvement-card">
+          <h3><img src="vb-spike.svg" alt="Spike" class="skill-icon" /> Spiking</h3>
+          <ul class="video-list" id="videos-spiking"></ul>
+        </article>
+        <article class="improvement-card">
+          <h3><img src="vb-net.svg" alt="Set" class="skill-icon" /> Setting</h3>
+          <ul class="video-list" id="videos-setting"></ul>
         </article>
       </div>
       <p class="improvement-credit">
-        Video tutorials:<br>
-        Passing: Elevate Yourself | Serving: Sarah Pavan Volleyball (underhand), Volleyball University (overhand), Elevate Yourself (float/jump serves) | Spiking: Elevate Yourself | Tipping: Elevate Yourself
+        Videos: Kristy Tekavec, Elevate Yourself, DavidSeybering95, Natke Volleyball, Wicked Volleyball, Coach Chijo
       </p>
     </section>
 
-    <section id="drills-section" aria-labelledby="drills-title">
-      <h2>🏋️ Drills to Improve</h2>
-      <div class="improvement-grid">
-        <article class="improvement-card">
-          <h3><img src="vb-net.svg" alt="Pass" class="skill-icon" /> Passing</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/shorts/6livtunhlOc" target="_blank"><span class="play-icon">▶</span> Wall Passing Drills</a></li>
-          </ul>
-          <p class="tools-needed">Tools: ball, wall</p>
-          <p class="video-creator">By Kristy Tekavec</p>
-        </article>
-
-        <article class="improvement-card">
-          <h3><img src="vb-net.svg" alt="Set" class="skill-icon" /> Setting</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/shorts/6cTmSAgP5ho" target="_blank"><span class="play-icon">▶</span> Setting Drills</a></li>
-            <li><a href="https://www.youtube.com/watch?v=RfoAU5uMro8" target="_blank"><span class="play-icon">▶</span> Setting Drills (Advanced)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=ZK4lqv5NxXA" target="_blank"><span class="play-icon">▶</span> Setting Fundamentals</a></li>
-          </ul>
-          <p class="tools-needed">Tools: ball, wall (Advanced: ball, net, partner)</p>
-          <p class="video-creator">By Elevate Yourself, DavidSeybering95, Natke Volleyball</p>
-        </article>
-
-        <article class="improvement-card">
-          <h3><img src="vb-spike.svg" alt="Spike" class="skill-icon" /> Spiking</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/shorts/NyR4cJ2pYa8" target="_blank"><span class="play-icon">▶</span> Spiking Drills</a></li>
-            <li><a href="https://www.youtube.com/watch?v=ZK4lqv5NxXA" target="_blank"><span class="play-icon">▶</span> Spiking Drills (Partner)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=EpmR0edNOgo" target="_blank"><span class="play-icon">▶</span> Spike Approach Drills</a></li>
-          </ul>
-          <p class="tools-needed">Tools: ball, wall (Advanced: ball, net, partner)</p>
-          <p class="video-creator">By Kristy Tekavec, Wicked Volleyball, Coach Chijo</p>
-        </article>
-
-        <article class="improvement-card">
-          <h3><img src="vb-serve.svg" alt="Serve" class="skill-icon" /> Serving</h3>
-          <ul class="video-list">
-            <li><a href="https://www.youtube.com/shorts/xJfOgw1dMWM" target="_blank"><span class="play-icon">▶</span> Serve Drills</a></li>
-            <li><a href="https://www.youtube.com/watch?v=rKoCO5tIPg8" target="_blank"><span class="play-icon">▶</span> Jump Serve Drills</a></li>
-          </ul>
-          <p class="tools-needed">Tools: ball, wall (Jump Serve: ball, net optional)</p>
-          <p class="video-creator">By Coach Chijo, Elevate Yourself</p>
-        </article>
+    <section id="training-log-section" aria-labelledby="training-log-title">
+      <h2>📓 Training Log</h2>
+      <form id="training-form">
+        <div class="form-row">
+          <label for="training-date">Date</label>
+          <input type="date" id="training-date" name="date" required />
+        </div>
+        <div class="form-row">
+          <label for="training-focus">Focus Skill</label>
+          <select id="training-focus" name="focusSkill" required>
+            <option value="">Select skill</option>
+            <option value="serving">Serving</option>
+            <option value="spiking">Spiking</option>
+            <option value="passing">Passing</option>
+            <option value="setting">Setting</option>
+          </select>
+        </div>
+        <div class="drill-entry">
+          <div class="drill-row">
+            <input type="text" id="drill-name" placeholder="Drill name" />
+            <input type="number" id="drill-reps" placeholder="Reps" min="0" value="0" />
+            <input type="text" id="drill-notes" placeholder="Notes" />
+            <button type="button" id="add-drill-btn">+ Add</button>
+          </div>
+          <ul id="drills-list" class="drills-list"></ul>
+        </div>
+        <div class="feedback-section">
+          <h4>Feedback</h4>
+          <div class="form-row">
+            <label for="feedback-well">What went well?</label>
+            <textarea id="feedback-well" name="feedbackWell" rows="2" placeholder="e.g., Good contact point"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="feedback-off">What felt off?</label>
+            <textarea id="feedback-off" name="feedbackOff" rows="2" placeholder="e.g., Arm swing early"></textarea>
+          </div>
+        </div>
+        <button type="submit">Save Training Log</button>
+      </form>
+      <div class="training-history">
+        <h3>Recent Sessions</h3>
+        <ul id="training-history-list"></ul>
       </div>
     </section>
 
@@ -354,7 +350,6 @@
           </ul>
           <p class="video-creator">By Set explained</p>
         </article>
-
         <article class="improvement-card">
           <h3>6-2 Varsity Rotation</h3>
           <ul class="video-list">
@@ -362,7 +357,6 @@
           </ul>
           <p class="video-creator">By SD Volleyball</p>
         </article>
-
         <article class="improvement-card">
           <h3>4-2 Varsity Rotation</h3>
           <ul class="video-list">
@@ -370,6 +364,15 @@
           </ul>
           <p class="video-creator">By Coach Steve</p>
         </article>
+      </div>
+    </section>
+
+    <section id="session-history-section" aria-labelledby="session-history-title">
+      <h2>📜 Session History</h2>
+      <div class="history-container">
+        <ul id="session-history-list">
+          <li class="history-empty">No sessions recorded yet.</li>
+        </ul>
       </div>
     </section>
   </main>
