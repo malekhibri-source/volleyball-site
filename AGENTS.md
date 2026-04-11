@@ -95,6 +95,37 @@ Located in `#serve-compare-section`:
 1. Serve calculator scoring bug - labels now match actual scores
 2. Changed cycle from 3 states to 4: `-` (0) → `IN` (0) → `OUT` (-1) → `ACE` (+1)
 
+### 2026-04-10: Video Tutorials & Learn Rotations
+
+#### Video Tutorial Links Feature
+- Added 📺 video icon links to form fields:
+  - Serve Type → underhand serve tutorial
+  - Spike Attempts → spiking footwork tutorial
+  - Passes Received → passing fundamentals tutorial
+- Fixed href bug in "Find Your Game Serve" section: changed `href="#"` to `href="javascript:void(0)"`
+
+#### Improvement Area (new section)
+- **Passing**: 2 videos (Elevate Yourself)
+- **Serving**: 5 videos - all serve types
+  - Underhand: Sarah Pavan Volleyball
+  - Overhand: Volleyball University
+  - Float/Jump serves: Elevate Yourself
+- **Spiking**: 4 videos (Elevate Yourself)
+- **Tipping**: 1 video (Elevate Yourself)
+- **Setting**: 1 video (Elevate Yourself)
+
+#### Learn Rotations (new section)
+- 5-1 Varsity Rotation (by Set explained)
+- 6-2 Varsity Rotation (by SD Volleyball)
+- 4-2 Varsity Rotation (by Coach Steve)
+
+#### Creator Credits
+All videos credited to their respective creators:
+- Sarah Pavan Volleyball (underhand serve)
+- Volleyball University (overhand serve)
+- Elevate Yourself (float/jump serves, passing, spiking, tipping, setting)
+- Set explained, SD Volleyball, Coach Steve (rotations)
+
 ## Files and Encoding
 
 - All files must be UTF-8 (no BOM)
