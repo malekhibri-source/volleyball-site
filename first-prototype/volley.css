@@ -133,6 +133,38 @@ section {
   grid-column: 1 / -1;
 }
 
+.position-selector {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.position-selector select {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 250px;
+}
+
+.position-selector select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#position-section {
+  grid-column: 1 / -1;
+}
+
+.position-tutorials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
 .position-checkboxes {
   display: flex;
   gap: 1rem;

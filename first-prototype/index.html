@@ -28,8 +28,30 @@
       </div>
     </section>
 
+    <section id="position-section" aria-labelledby="position-title">
+      <h2>🏐 My Position</h2>
+      <p class="section-subtitle">Select your primary position to see relevant tutorials</p>
+      <div class="position-selector">
+        <select id="position-select">
+          <option value="">-- Select Position --</option>
+          <option value="outside-hitter">Outside Hitter</option>
+          <option value="opposite-hitter">Opposite Hitter</option>
+          <option value="setter">Setter</option>
+          <option value="middle-blocker">Middle Blocker</option>
+          <option value="libero">Libero</option>
+          <option value="undecided">Undecided (Show All)</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="position-tutorials-section" aria-labelledby="position-tutorials-title" style="display: none;">
+      <h2>📺 My Position Tutorials</h2>
+      <div class="position-tutorials-grid" id="position-tutorials-grid"></div>
+      <p class="improvement-credit" id="position-tutorials-credit"></p>
+    </section>
+
     <section id="settings-section" aria-labelledby="settings-title">
-      <h2>⚙️ My Position</h2>
+      <h2>⚙️ My Skills</h2>
       <p class="section-subtitle">Uncheck skills you don't do (excluded from weakness detection)</p>
       <div class="position-checkboxes">
         <label class="position-checkbox">
@@ -47,6 +69,10 @@
         <label class="position-checkbox">
           <input type="checkbox" id="pos-setting" checked />
           <span>Setting</span>
+        </label>
+        <label class="position-checkbox">
+          <input type="checkbox" id="pos-blocking" checked />
+          <span>Blocking</span>
         </label>
       </div>
     </section>
@@ -95,7 +121,7 @@
         </div>
 
         <div class="form-cards">
-          <div class="form-card">
+          <div class="form-card" id="form-card-serving">
             <h3><img src="vb-serve.svg" alt="Serve" class="card-icon" /> Serving</h3>
             <div class="form-row">
               <label for="serve-attempts">Attempts</label>
@@ -122,7 +148,7 @@
             </div>
           </div>
 
-          <div class="form-card">
+          <div class="form-card" id="form-card-spiking">
             <h3><img src="vb-spike.svg" alt="Spike" class="card-icon" /> Spiking</h3>
             <div class="form-row">
               <label for="spike-attempts">Attempts</label>
@@ -138,7 +164,27 @@
             </div>
           </div>
 
-          <div class="form-card">
+          <div class="form-card" id="form-card-blocking">
+            <h3><img src="vb-net.svg" alt="Block" class="card-icon" /> Blocking</h3>
+            <div class="form-row">
+              <label for="block-attempts">Attempts</label>
+              <input type="number" id="block-attempts" name="blockAttempts" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="block-kills">Kills (Point)</label>
+              <input type="number" id="block-kills" name="blockKills" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="block-touches">Touches (Good)</label>
+              <input type="number" id="block-touches" name="blockTouches" min="0" value="0" />
+            </div>
+            <div class="form-row">
+              <label for="block-errors">Errors</label>
+              <input type="number" id="block-errors" name="blockErrors" min="0" value="0" />
+            </div>
+          </div>
+
+          <div class="form-card" id="form-card-passing">
             <h3><img src="vb-net.svg" alt="Pass" class="card-icon" /> Passing</h3>
             <div class="form-row">
               <label for="passes-received">Received</label>
@@ -150,7 +196,7 @@
             </div>
           </div>
 
-          <div class="form-card">
+          <div class="form-card" id="form-card-setting">
             <h3><img src="vb-net.svg" alt="Set" class="card-icon" /> Setting</h3>
             <div class="form-row">
               <label for="sets-given">Sets Given</label>
@@ -376,6 +422,6 @@
       </div>
     </section>
   </main>
-  <script src="app.js"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

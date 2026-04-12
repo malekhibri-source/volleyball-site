@@ -1,6 +1,7 @@
 (function () {
   const SESSIONS_KEY = "volleyball-sessions";
   const TRAINING_LOG_KEY = "volleyball-training-log";
+  const USER_POSITION_KEY = "volleyball-user-position";
 
   let sessions = loadSessions();
   let trainingLogs = loadTrainingLogs();
@@ -9,6 +10,70 @@
 
   const serveAData = Array(10).fill(0);
   const serveBData = Array(10).fill(0);
+
+  function loadSessions() {
+    try {
+      const data = localStorage.getItem(SESSIONS_KEY);
+      return data ? JSON.parse(data) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveSessions() {
+    try {
+      localStorage.setItem(SESSIONS_KEY, JSON.stringify(sessions));
+    } catch (e) {}
+  }
+
+  function loadTrainingLogs() {
+    try {
+      const data = localStorage.getItem(TRAINING_LOG_KEY);
+      return data ? JSON.parse(data) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveTrainingLogs() {
+    try {
+      localStorage.setItem(TRAINING_LOG_KEY, JSON.stringify(trainingLogs));
+    } catch (e) {}
+  }
+
+  const positionTutorialsDB = {
+    "outside-hitter": [
+      { title: "Outside Hitter Complete Guide", url: "https://www.youtube.com/watch?v=p9Je6eXtcd0", creator: "Jiri Popelka" },
+      { title: "Outside Hitter Skills", url: "https://www.youtube.com/watch?v=IGfj8k9QjwI", creator: "Four Athletes" },
+      { title: "Outside Hitter Tips", url: "https://www.youtube.com/watch?v=vKsViBLH41I", creator: "Four Athletes" }
+    ],
+    "opposite-hitter": [
+      { title: "Opposite Hitter Complete Guide", url: "https://www.youtube.com/watch?v=lQtswg7S0Nk&t=12s", creator: "Jiri Popelka" },
+      { title: "Opposite Hitter Skills", url: "https://www.youtube.com/watch?v=NMs38ZelqK8", creator: "Four Athletes" }
+    ],
+    "setter": [
+      { title: "Setter Complete Guide", url: "https://www.youtube.com/watch?v=-OJPH3TAiA0", creator: "Jiri Popelka" },
+      { title: "Setter Fundamentals", url: "https://www.youtube.com/watch?v=a4nrgq3ma3o", creator: "PME Volleyball" }
+    ],
+    "middle-blocker": [
+      { title: "Middle Blocker Complete Guide", url: "https://www.youtube.com/watch?v=MwCyKLSDLLQ&t=196s", creator: "Coach Artie" },
+      { title: "Middle Blocker Tips", url: "https://www.youtube.com/watch?v=0Q7dpZZ71X8", creator: "Jiri Popelka" },
+      { title: "Middle Blocker Skills", url: "https://www.youtube.com/watch?v=_neqUO4ZbpA", creator: "International Volleyball Academy" }
+    ],
+    "libero": [
+      { title: "Libero Complete Guide", url: "https://www.youtube.com/watch?v=hlK6gC0pgR4", creator: "Coach Artie" },
+      { title: "Libero Fundamentals", url: "https://www.youtube.com/watch?v=hbeQfSKKgNQ", creator: "Mitch Sterkenburg" }
+    ],
+    "undecided": []
+  };
+
+  positionTutorialsDB["undecided"] = [
+    ...positionTutorialsDB["outside-hitter"],
+    ...positionTutorialsDB["opposite-hitter"],
+    ...positionTutorialsDB["setter"],
+    ...positionTutorialsDB["middle-blocker"],
+    ...positionTutorialsDB["libero"]
+  ];
 
   const drillsDB = [
     { name: "Wall Passing", skill: "passing", difficulty: "beginner", tools: ["ball", "wall"] },
@@ -56,7 +121,8 @@
     serving: "Focus on contacting the ball at the highest point and following through toward your target",
     spiking: "Contact the ball in front of your body and snap your wrist at contact for more power",
     passing: "Keep your platform steady and angle your arms to pass to the setter's target",
-    setting: "Use your legs, not just your arms. Get low and push through the ball"
+    setting: "Use your legs, not just your arms. Get low and push through the ball",
+    blocking: "Get high and time your jump with the attacker's. Stack the ball for best results"
   };
 
   const quickVideosDB = {
@@ -77,52 +143,21 @@
     setting: [
       { title: "Setting Drills", url: "https://www.youtube.com/shorts/6cTmSAgP5ho" },
       { title: "Setting Fundamentals", url: "https://www.youtube.com/watch?v=ZK4lqv5NxXA" }
+    ],
+    blocking: [
+      { title: "Blocking Fundamentals", url: "https://www.youtube.com/watch?v=MwCyKLSDLLQ&t=196s" },
+      { title: "Middle Blocker Tips", url: "https://www.youtube.com/watch?v=0Q7dpZZ71X8" }
     ]
   };
 
-  init();
-
-  function init() {
-    loadPositionSettings();
-    setDefaultDate();
-    renderDashboard();
-    renderDrillsBySkill();
-    renderVideosBySkill();
-    renderSessionHistory();
-    renderTrainingHistory();
-    setupEventListeners();
-  }
-
-  function loadPositionSettings() {
-    try {
-      const settings = JSON.parse(localStorage.getItem("volleyball-position") || "null");
-      if (settings) {
-        document.getElementById("pos-serving").checked = settings.serving !== false;
-        document.getElementById("pos-spiking").checked = settings.spiking !== false;
-        document.getElementById("pos-passing").checked = settings.passing !== false;
-        document.getElementById("pos-setting").checked = settings.setting !== false;
-      }
-    } catch (e) {}
-  }
-
-  function savePositionSettings() {
-    const settings = {
-      serving: document.getElementById("pos-serving").checked,
-      spiking: document.getElementById("pos-spiking").checked,
-      passing: document.getElementById("pos-passing").checked,
-      setting: document.getElementById("pos-setting").checked
-    };
-    localStorage.setItem("volleyball-position", JSON.stringify(settings));
-  }
-
-  function getActiveSkills() {
-    return {
-      serving: document.getElementById("pos-serving").checked,
-      spiking: document.getElementById("pos-spiking").checked,
-      passing: document.getElementById("pos-passing").checked,
-      setting: document.getElementById("pos-setting").checked
-    };
-  }
+  const positionSkillsMap = {
+    "outside-hitter": { serving: true, spiking: true, passing: true, setting: false, blocking: true },
+    "opposite-hitter": { serving: true, spiking: true, passing: false, setting: false, blocking: true },
+    "setter": { serving: true, spiking: false, passing: true, setting: true, blocking: true },
+    "middle-blocker": { serving: true, spiking: true, passing: false, setting: false, blocking: true },
+    "libero": { serving: false, spiking: false, passing: true, setting: false, blocking: false },
+    "undecided": { serving: true, spiking: true, passing: true, setting: true, blocking: true }
+  };
 
   function setDefaultDate() {
     const today = new Date().toISOString().split("T")[0];
@@ -130,213 +165,117 @@
     document.getElementById("training-date").value = today;
   }
 
-  function loadSessions() {
-    try {
-      const raw = localStorage.getItem(SESSIONS_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch {
-      return [];
-    }
-  }
+  function renderDashboard() {
+    const settings = {
+      serving: document.getElementById("pos-serving").checked,
+      spiking: document.getElementById("pos-spiking").checked,
+      passing: document.getElementById("pos-passing").checked,
+      setting: document.getElementById("pos-setting").checked,
+      blocking: document.getElementById("pos-blocking").checked
+    };
 
-  function loadTrainingLogs() {
-    try {
-      const raw = localStorage.getItem(TRAINING_LOG_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch {
-      return [];
-    }
-  }
-
-  function saveSessions() {
-    localStorage.setItem(SESSIONS_KEY, JSON.stringify(sessions));
-  }
-
-  function saveTrainingLogs() {
-    localStorage.setItem(TRAINING_LOG_KEY, JSON.stringify(trainingLogs));
-  }
-
-  function getStats() {
-    if (sessions.length === 0) {
-      return {
-        servePercent: 0,
-        serveErrorPercent: 0,
-        acePercent: 0,
-        aceCount: 0,
-        spikePercent: 0,
-        spikeErrorPercent: 0,
-        passPercent: 0,
-        totalSessions: 0
-      };
-    }
-
-    let serveAttempts = 0, serveMade = 0, serveErrors = 0, acesCount = 0;
-    let spikeAttempts = 0, spikeMade = 0, spikeErrors = 0;
-    let passesReceived = 0, passesWell = 0;
+    let totalServe = 0, totalServeMade = 0, totalAces = 0;
+    let totalSpike = 0, totalSpikeMade = 0;
+    let totalPass = 0, totalPassWell = 0;
+    let totalSets = 0, totalSetHits = 0;
 
     sessions.forEach(s => {
-      serveAttempts += s.serveAttempts || 0;
-      serveMade += s.serveMade || 0;
-      serveErrors += s.serveErrors || 0;
-      acesCount += s.acesCount || 0;
-      spikeAttempts += s.spikeAttempts || 0;
-      spikeMade += s.spikeMade || 0;
-      spikeErrors += s.spikeErrors || 0;
-      passesReceived += s.passesReceived || 0;
-      passesWell += s.passesWell || 0;
+      if (settings.serving) {
+        totalServe += s.serveAttempts || 0;
+        totalServeMade += s.serveMade || 0;
+        totalAces += s.acesCount || 0;
+      }
+      if (settings.spiking) {
+        totalSpike += s.spikeAttempts || 0;
+        totalSpikeMade += s.spikeMade || 0;
+      }
+      if (settings.passing) {
+        totalPass += s.passesReceived || 0;
+        totalPassWell += s.passesWell || 0;
+      }
+      if (settings.setting) {
+        totalSets += s.setsGiven || 0;
+        totalSetHits += s.setsHit || 0;
+      }
     });
 
-    return {
-      servePercent: serveAttempts > 0 ? (serveMade / serveAttempts) * 100 : 0,
-      serveErrorPercent: serveAttempts > 0 ? (serveErrors / serveAttempts) * 100 : 0,
-      acePercent: serveAttempts > 0 ? (acesCount / serveAttempts) * 100 : 0,
-      aceCount: acesCount,
-      spikePercent: spikeAttempts > 0 ? (spikeMade / spikeAttempts) * 100 : 0,
-      spikeErrorPercent: spikeAttempts > 0 ? (spikeErrors / spikeAttempts) * 100 : 0,
-      passPercent: passesReceived > 0 ? (passesWell / passesReceived) * 100 : 0,
-      totalSessions: sessions.length
-    };
-  }
-
-  function detectWeakness(stats) {
-    const activeSkills = getActiveSkills();
-    const skills = [];
-    
-    if (activeSkills.serving && stats.servePercent > 0) skills.push({ name: "serving", rate: stats.servePercent });
-    if (activeSkills.spiking && stats.spikePercent > 0) skills.push({ name: "spiking", rate: stats.spikePercent });
-    if (activeSkills.passing && stats.passPercent > 0) skills.push({ name: "passing", rate: stats.passPercent });
-
-    if (skills.length === 0) return null;
-    
-    skills.sort((a, b) => a.rate - b.rate);
-    return skills[0];
-  }
-
-  function renderDashboard() {
-    const stats = getStats();
-    const weakness = detectWeakness(stats);
+    const stats = {};
+    if (settings.serving && totalServe > 0) {
+      stats.servePercent = (totalServeMade / totalServe * 100);
+      stats.acePercent = (totalAces / totalServe * 100);
+    } else {
+      stats.servePercent = 0;
+      stats.acePercent = 0;
+    }
+    if (settings.spiking && totalSpike > 0) {
+      stats.spikePercent = (totalSpikeMade / totalSpike * 100);
+    } else {
+      stats.spikePercent = 0;
+    }
+    if (settings.passing && totalPass > 0) {
+      stats.passPercent = (totalPassWell / totalPass * 100);
+    } else {
+      stats.passPercent = 0;
+    }
+    stats.aceCount = totalAces;
+    stats.sessions = sessions.length;
 
     document.getElementById("serve-percent-value").textContent = stats.servePercent.toFixed(1) + "%";
-    document.getElementById("serve-errors").textContent = stats.serveErrorPercent.toFixed(1) + "% error";
-
     document.getElementById("ace-percent-value").textContent = stats.acePercent.toFixed(1) + "%";
-    document.getElementById("ace-count").textContent = stats.aceCount + " aces";
-
     document.getElementById("spike-percent-value").textContent = stats.spikePercent.toFixed(1) + "%";
-    document.getElementById("spike-errors").textContent = stats.spikeErrorPercent.toFixed(1) + "% error";
-
     document.getElementById("pass-percent-value").textContent = stats.passPercent.toFixed(1) + "%";
+    document.getElementById("ace-count").textContent = stats.aceCount + " aces";
+    document.getElementById("totals-value").textContent = stats.sessions + " sessions";
 
-    document.getElementById("totals-value").textContent = sessions.length + " sessions";
-
-    renderFocus(stats, weakness);
-    renderWeaknessAlert(weakness);
-    renderChart();
-  }
-
-  function renderFocus(stats, weakness) {
-    const focusSkillEl = document.getElementById("focus-skill");
-    const focusTipEl = document.getElementById("focus-tip");
-    const quickVideosEl = document.getElementById("quick-videos-list");
-
-    if (!weakness || sessions.length < 3) {
-      focusSkillEl.textContent = sessions.length < 3 
-        ? "Keep tracking (" + sessions.length + "/3 sessions)" 
-        : "Add more variety to get focus";
-      focusTipEl.textContent = sessions.length < 3
-        ? "Log at least 3 sessions to unlock personalized focus"
-        : "Log sessions for different skills to get a focus";
-      quickVideosEl.innerHTML = "<p class='text-muted'>Add sessions to see quick videos</p>";
-      return;
-    }
-
-    focusSkillEl.textContent = capitalizeFirst(weakness.name);
-    focusTipEl.textContent = focusTips[weakness.name] || "Practice consistently to improve";
-
-    const focusVideos = quickVideosDB[weakness.name] || [];
-    quickVideosEl.innerHTML = focusVideos.map(v => 
-      "<a href='" + v.url + "' target='_blank' class='quick-video-link'>▶ " + v.title + "</a>"
-    ).join("");
-  }
-
-  function renderWeaknessAlert(weakness) {
     const alert = document.getElementById("weakness-alert");
     const msg = document.getElementById("weakness-message");
-
-    if (!weakness || sessions.length < 3) {
+    if (sessions.length > 0) {
+      const skills = [];
+      if (settings.serving) skills.push({ name: "serving", percent: stats.servePercent });
+      if (settings.spiking) skills.push({ name: "spiking", percent: stats.spikePercent });
+      if (settings.passing) skills.push({ name: "passing", percent: stats.passPercent });
+      if (settings.setting && totalSets > 0) skills.push({ name: "setting", percent: (totalSetHits / totalSets * 100) });
+      
+      if (skills.length > 0) {
+        skills.sort((a, b) => a.percent - b.percent);
+        const weakest = skills[0];
+        if (weakest.percent < 50) {
+          alert.style.display = "flex";
+          msg.textContent = "Your weakest skill: " + weakest.name.charAt(0).toUpperCase() + weakest.name.slice(1) + " (" + weakest.percent.toFixed(1) + "%)";
+        } else {
+          alert.style.display = "none";
+        }
+      }
+    } else {
       alert.style.display = "none";
-      return;
     }
 
-    alert.style.display = "flex";
-    msg.textContent = "Your weakest skill: " + capitalizeFirst(weakness.name) + " (" + weakness.rate.toFixed(1) + "% success rate)";
+    renderTrendsChart();
   }
 
-  function renderDrillsBySkill() {
-    const skills = ["passing", "serving", "spiking", "setting"];
-    
-    skills.forEach(skill => {
-      const container = document.getElementById("drills-" + skill);
-      if (!container) return;
-      
-      const skillDrills = drillsDB.filter(d => d.skill === skill);
-      container.innerHTML = skillDrills.map(drill => `
-        <li>
-          <span class="drill-name">${drill.name}</span>
-          <span class="drill-meta">
-            <span class="drill-difficulty ${drill.difficulty}">${drill.difficulty}</span>
-            <span class="drill-tools">${drill.tools.join(", ")}</span>
-          </span>
-        </li>
-      `).join("");
-    });
-  }
-
-  function renderVideosBySkill() {
-    const skills = ["passing", "serving", "spiking", "setting"];
-    
-    skills.forEach(skill => {
-      const container = document.getElementById("videos-" + skill);
-      if (!container) return;
-      
-      const skillVideos = videosDB.filter(v => v.skill === skill);
-      container.innerHTML = skillVideos.map(video => `
-        <li>
-          <a href="${video.url}" target="_blank">
-            <span class="play-icon">▶</span> ${video.title}
-          </a>
-        </li>
-      `).join("");
-    });
-  }
-
-  function renderChart() {
+  function renderTrendsChart() {
     const ctx = document.getElementById("trends-chart");
     if (!ctx) return;
+    
+    const labels = sessions.map(s => s.date);
+    const serveData = sessions.map(s => s.serveAttempts > 0 ? (s.serveMade / s.serveAttempts * 100) : null);
+    const spikeData = sessions.map(s => s.spikeAttempts > 0 ? (s.spikeMade / s.spikeAttempts * 100) : null);
+    const passData = sessions.map(s => s.passesReceived > 0 ? (s.passesWell / s.passesReceived * 100) : null);
 
     if (chart) chart.destroy();
-
-    const recentSessions = sessions.slice(-10);
-    if (recentSessions.length === 0) return;
-
-    const labels = recentSessions.map(s => s.date.slice(5));
-    const serveData = recentSessions.map(s => s.serveAttempts > 0 ? (s.serveMade / s.serveAttempts) * 100 : null);
-    const spikeData = recentSessions.map(s => s.spikeAttempts > 0 ? (s.spikeMade / s.spikeAttempts) * 100 : null);
-    const passData = recentSessions.map(s => s.passesReceived > 0 ? (s.passesWell / s.passesReceived) * 100 : null);
-
+    
     chart = new Chart(ctx, {
       type: "line",
       data: {
         labels: labels,
         datasets: [
-          { label: "Serve %", data: serveData, borderColor: "#1E90FF", backgroundColor: "#1E90FF", tension: 0.3 },
-          { label: "Spike %", data: spikeData, borderColor: "#10B981", backgroundColor: "#10B981", tension: 0.3 },
-          { label: "Pass %", data: passData, borderColor: "#00E5FF", backgroundColor: "#00E5FF", tension: 0.3 }
+          { label: "Serve %", data: serveData, borderColor: "#1E90FF", tension: 0.3 },
+          { label: "Spike %", data: spikeData, borderColor: "#EF4444", tension: 0.3 },
+          { label: "Pass %", data: passData, borderColor: "#10B981", tension: 0.3 }
         ]
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false,
         scales: {
           y: { min: 0, max: 100, grid: { color: "#374151" } },
           x: { grid: { color: "#374151" } }
@@ -348,15 +287,183 @@
     });
   }
 
+  init();
+
+  function init() {
+    console.log('[DEBUG] init() called');
+    loadUserPosition();
+    setDefaultDate();
+    renderDashboard();
+    renderDrillsBySkill();
+    renderVideosBySkill();
+    renderPositionTutorials();
+    renderSessionHistory();
+    renderTrainingHistory();
+    updateFormVisibility();
+    setupEventListeners();
+    console.log('[DEBUG] init() complete');
+  }
+
+  function loadUserPosition() {
+    console.log('[DEBUG] loadUserPosition() called');
+    try {
+      const savedPosition = localStorage.getItem(USER_POSITION_KEY);
+      console.log('[DEBUG] Saved position:', savedPosition);
+      if (savedPosition) {
+        document.getElementById("position-select").value = savedPosition;
+        console.log('[DEBUG] Set dropdown to:', savedPosition);
+        renderPositionTutorials();
+        if (savedPosition && savedPosition !== "undecided") {
+          applyPositionSkills(savedPosition);
+        }
+      } else {
+        console.log('[DEBUG] No saved position found');
+      }
+    } catch (e) {
+      console.error('[DEBUG] Error loading position:', e);
+    }
+  }
+
+  function saveUserPosition(position) {
+    console.log('[DEBUG] saveUserPosition() called with:', position);
+    try {
+      localStorage.setItem(USER_POSITION_KEY, position);
+    } catch (e) {}
+  }
+
+  function renderPositionTutorials() {
+    console.log('[DEBUG] renderPositionTutorials() called');
+    const select = document.getElementById("position-select");
+    const section = document.getElementById("position-tutorials-section");
+    const grid = document.getElementById("position-tutorials-grid");
+    const credit = document.getElementById("position-tutorials-credit");
+    const position = select.value;
+    console.log('[DEBUG] Rendering tutorials for position:', position);
+
+    if (!position) {
+      section.style.display = "none";
+      console.log('[DEBUG] No position, hiding section');
+      return;
+    }
+
+    section.style.display = "block";
+    const videos = positionTutorialsDB[position] || [];
+    console.log('[DEBUG] Videos found:', videos.length);
+    const creators = [...new Set(videos.map(v => v.creator))];
+
+    grid.innerHTML = videos.map(video => `
+      <article class="improvement-card">
+        <ul class="video-list">
+          <li><a href="${video.url}" target="_blank"><span class="play-icon">▶</span> ${video.title}</a></li>
+        </ul>
+        <p class="video-creator">By ${video.creator}</p>
+      </article>
+    `).join("");
+
+    credit.textContent = "Videos: " + creators.join(", ");
+  }
+
+  function applyPositionSkills(position) {
+    console.log('[DEBUG] applyPositionSkills() called with:', position);
+    const skills = positionSkillsMap[position] || positionSkillsMap["undecided"];
+    console.log('[DEBUG] Skills to apply:', skills);
+    if (!skills) return;
+    
+    document.getElementById("pos-serving").checked = skills.serving;
+    document.getElementById("pos-spiking").checked = skills.spiking;
+    document.getElementById("pos-passing").checked = skills.passing;
+    document.getElementById("pos-setting").checked = skills.setting;
+    document.getElementById("pos-blocking").checked = skills.blocking;
+    
+    console.log('[DEBUG] Checkboxes updated, now saving...');
+    // Delay save to ensure DOM has updated
+    setTimeout(() => {
+      savePositionSettings();
+      renderDashboard();
+      updateFormVisibility();
+      console.log('[DEBUG] Finished applyPositionSkills');
+    }, 10);
+  }
+
+  function updateFormVisibility() {
+    const skills = {
+      serving: document.getElementById("pos-serving").checked,
+      spiking: document.getElementById("pos-spiking").checked,
+      passing: document.getElementById("pos-passing").checked,
+      setting: document.getElementById("pos-setting").checked,
+      blocking: document.getElementById("pos-blocking").checked
+    };
+    
+    const cardMap = {
+      serving: "form-card-serving",
+      spiking: "form-card-spiking",
+      passing: "form-card-passing",
+      setting: "form-card-setting",
+      blocking: "form-card-blocking"
+    };
+    
+    for (const [skill, cardId] of Object.entries(cardMap)) {
+      const card = document.getElementById(cardId);
+      if (card) {
+        card.style.display = skills[skill] ? "block" : "none";
+      }
+    }
+  }
+
+  function renderDrillsBySkill() {
+    const skills = ["passing", "serving", "spiking", "setting"];
+    skills.forEach(skill => {
+      const container = document.getElementById("drills-" + skill);
+      if (!container) return;
+      const drills = drillsDB.filter(d => d.skill === skill);
+      if (drills.length === 0) {
+        container.innerHTML = "<li>No drills available</li>";
+        return;
+      }
+      container.innerHTML = drills.map(d => `
+        <li>
+          <span class="drill-name">${d.name}</span>
+          <span class="drill-meta">${d.difficulty} | ${d.tools.join(", ")}</span>
+        </li>
+      `).join("");
+    });
+  }
+
+  function renderVideosBySkill() {
+    const skills = ["passing", "serving", "spiking", "setting"];
+    skills.forEach(skill => {
+      const container = document.getElementById("videos-" + skill);
+      if (!container) return;
+      const videos = videosDB.filter(v => v.skill === skill);
+      if (videos.length === 0) {
+        container.innerHTML = "<li>No videos available</li>";
+        return;
+      }
+      container.innerHTML = videos.map(v => `
+        <li><a href="${v.url}" target="_blank"><span class="play-icon">▶</span> ${v.title}</a></li>
+      `).join("");
+    });
+  }
+
   function setupEventListeners() {
     document.getElementById("session-form").addEventListener("submit", handleSessionSubmit);
     document.getElementById("training-form").addEventListener("submit", handleTrainingSubmit);
     document.getElementById("add-drill-btn").addEventListener("click", handleAddDrill);
 
-    document.getElementById("pos-serving").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
-    document.getElementById("pos-spiking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
-    document.getElementById("pos-passing").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
-    document.getElementById("pos-setting").addEventListener("change", () => { savePositionSettings(); renderDashboard(); });
+    document.getElementById("pos-serving").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
+    document.getElementById("pos-spiking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
+    document.getElementById("pos-passing").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
+    document.getElementById("pos-setting").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
+    document.getElementById("pos-blocking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
+
+    document.getElementById("position-select").addEventListener("change", function() {
+      const position = this.value;
+      console.log('[DEBUG] Position dropdown changed to:', position);
+      saveUserPosition(position);
+      renderPositionTutorials();
+      // Use setTimeout to allow DOM to fully update before applying skills
+      setTimeout(() => applyPositionSkills(position), 10);
+    });
 
     document.getElementById("serve-type").addEventListener("change", function() {
       const link = document.getElementById("serve-type-link");
@@ -369,6 +476,32 @@
     });
 
     setupServeComparison();
+  }
+
+  function savePositionSettings() {
+    const settings = {
+      serving: document.getElementById("pos-serving").checked,
+      spiking: document.getElementById("pos-spiking").checked,
+      passing: document.getElementById("pos-passing").checked,
+      setting: document.getElementById("pos-setting").checked,
+      blocking: document.getElementById("pos-blocking").checked
+    };
+    try {
+      localStorage.setItem("volleyball-position-settings", JSON.stringify(settings));
+    } catch (e) {}
+  }
+
+  function loadPositionSettings() {
+    try {
+      const settings = JSON.parse(localStorage.getItem("volleyball-position-settings") || "null");
+      if (settings) {
+        document.getElementById("pos-serving").checked = settings.serving !== false;
+        document.getElementById("pos-spiking").checked = settings.spiking !== false;
+        document.getElementById("pos-passing").checked = settings.passing !== false;
+        document.getElementById("pos-setting").checked = settings.setting !== false;
+        document.getElementById("pos-blocking").checked = settings.blocking !== false;
+      }
+    } catch (e) {}
   }
 
   function handleSessionSubmit(e) {
@@ -386,6 +519,10 @@
       spikeAttempts: parseInt(formData.get("spikeAttempts")) || 0,
       spikeMade: parseInt(formData.get("spikeMade")) || 0,
       spikeErrors: parseInt(formData.get("spikeErrors")) || 0,
+      blockAttempts: parseInt(formData.get("blockAttempts")) || 0,
+      blockKills: parseInt(formData.get("blockKills")) || 0,
+      blockTouches: parseInt(formData.get("blockTouches")) || 0,
+      blockErrors: parseInt(formData.get("blockErrors")) || 0,
       passesReceived: parseInt(formData.get("passesReceived")) || 0,
       passesWell: parseInt(formData.get("passesWell")) || 0,
       setsGiven: parseInt(formData.get("setsGiven")) || 0,
