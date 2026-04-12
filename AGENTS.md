@@ -20,8 +20,9 @@ Plus SVG assets:
 - Pure HTML5, CSS3, vanilla JavaScript
 - No build tools, no frameworks, no package manager
 - localStorage for data persistence
+- Chart.js for trends visualization
 
-## Current Version (v2)
+## Current Version (v3)
 
 ### Color Scheme (Dark Theme)
 - Background: #0B0F1A (deep navy/black)
@@ -44,6 +45,10 @@ Plus SVG assets:
 - `setsTipped` - Sets that were blocked
 - `setsHit` - Sets that resulted in kills
 - `pointsWon` - Total points won in session
+- `blockAttempts` - Block attempts
+- `blockKills` - Block kills (point)
+- `blockTouches` - Block touches (good)
+- `blockErrors` - Block errors
 
 ### Dashboard Elements
 - `#serve-percent-value` - Serve percentage
@@ -59,7 +64,8 @@ Plus SVG assets:
 {
   id, date, serveAttempts, serveMade, spikeAttempts, spikeMade,
   serveType, acesCount, passesReceived, passesWell,
-  setsGiven, setsTipped, setsHit, pointsWon
+  setsGiven, setsTipped, setsHit, pointsWon,
+  blockAttempts, blockKills, blockTouches, blockErrors
 }
 ```
 
@@ -143,3 +149,47 @@ Open `first-prototype/index.html` directly in a browser (no server required).
 - Session editing/deletion
 - Export data functionality
 - Beach court images (skipped for now)
+
+### 2026-04-12: Position Selector & Blocking
+
+#### Position Selector Feature
+- Added "My Position" dropdown with options: Outside Hitter, Opposite Hitter, Setter, Middle Blocker, Libero, Undecided
+- Position saved to localStorage (`volleyball-user-position`)
+- Selecting position auto-selects relevant skills and shows tutorials
+
+#### Position Tutorials Section
+- New "📺 My Position Tutorials" section shows video tutorials specific to selected position
+- 12 tutorial videos mapped to positions:
+  - **Outside Hitter**: Jiri Popelka (2 videos), Four Athletes (2 videos)
+  - **Opposite Hitter**: Jiri Popelka, Four Athletes
+  - **Setter**: Jiri Popelka, PME Volleyball
+  - **Middle Blocker**: Coach Artie, Jiri Popelka, International Volleyball Academy
+  - **Libero**: Coach Artie, Mitch Sterkenburg
+
+#### Auto Skill Selection by Position
+| Position | Skills Enabled |
+|----------|---------------|
+| Outside Hitter | Serving ✓, Spiking ✓, Passing ✓, Setting ✗, Blocking ✓ |
+| Opposite Hitter | Serving ✓, Spiking ✓, Passing ✗, Setting ✗, Blocking ✓ |
+| Setter | Serving ✓, Spiking ✗, Passing ✓, Setting ✓, Blocking ✓ |
+| Middle Blocker | Serving ✓, Spiking ✓, Passing ✗, Setting ✗, Blocking ✓ |
+| Libero | Serving ✗, Spiking ✗, Passing ✓, Setting ✗, Blocking ✗ |
+
+#### Blocking Form Card
+Added to Log Session form:
+- Block Attempts (`blockAttempts`)
+- Block Kills (Point) (`blockKills`)  
+- Block Touches (Good) (`blockTouches`)
+- Block Errors (`blockErrors`)
+
+#### Dynamic Form Visibility
+- Skills checkboxes in "⚙️ My Skills" section control which form cards are visible
+- Form cards (Serving, Spiking, Blocking, Passing, Setting) show/hide based on checked skills
+- Users can manually override any checkbox
+
+#### Bug Fixes
+- Added missing functions: `loadSessions()`, `saveSessions()`, `loadTrainingLogs()`, `saveTrainingLogs()`
+- Added `setDefaultDate()`, `renderDashboard()`, `renderTrendsChart()`
+- Added `renderDrillsBySkill()` and `renderVideosBySkill()` for drills/videos sections
+- Removed duplicate `loadUserPosition()` function
+- Fixed storage access issues in Chrome browser
