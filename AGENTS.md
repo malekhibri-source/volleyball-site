@@ -193,3 +193,30 @@ Added to Log Session form:
 - Added `renderDrillsBySkill()` and `renderVideosBySkill()` for drills/videos sections
 - Removed duplicate `loadUserPosition()` function
 - Fixed storage access issues in Chrome browser
+
+### 2026-04-13: Drills/Videos Accordion
+
+#### Accordion Feature
+- Converted "Drills by Skill" and "Training Videos" sections from static grids to interactive accordions
+- All skills collapsed by default
+- Click a skill header to expand (chevron rotates to indicate state)
+- Accordion style: clicking one skill collapses others
+- Skills sync with "My Skills" checkboxes (uncheck a skill → it disappears from drills/videos)
+
+#### Implementation Details
+- **index.html**: Replaced static `improvement-card` grid with dynamic `#drills-grid` and `#videos-grid` containers
+- **app.js**: Rewrote `renderDrillsBySkill()` and `renderVideosBySkill()` to generate accordion markup with clickable `<button class="skill-toggle">`
+- **app.js**: Added `setupSkillAccordion()` function for click handlers
+- **volley.css**: Added `.skill-toggle`, `.skill-toggle .chevron`, `.skill-content` styles
+
+#### CSS Layout Fixes
+- Fixed overflow issues with skill labels in accordion headers
+- Added `box-sizing: border-box`, `flex-wrap: nowrap` to `.skill-toggle`
+- Added `flex-shrink: 0` to chevron and skill-icon elements
+- Added `overflow: hidden` to `.improvement-card` to prevent content overflow
+
+#### Missing Video Added
+- Added "Tip & Roll / Cut Shot" tutorial to spiking videos
+- URL: `https://www.youtube.com/watch?v=jnEA9sV834s`
+- Creator: Elevate Yourself
+- Added to `videosDB` array in app.js

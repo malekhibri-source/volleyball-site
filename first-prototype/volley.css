@@ -518,6 +518,7 @@ button[type="submit"]:hover {
   border-radius: 12px;
   padding: 1rem;
   transition: all 0.2s;
+  overflow: hidden;
 }
 
 .improvement-card:hover {
@@ -867,6 +868,57 @@ button[type="submit"]:hover {
 .quick-video-link:hover {
   background: var(--primary);
   color: var(--bg);
+}
+
+.skill-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+.skill-toggle:hover {
+  color: var(--primary);
+}
+
+.skill-toggle .chevron {
+  margin-left: auto;
+  transition: transform 0.2s ease;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.skill-toggle .skill-icon {
+  width: 32px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  flex-shrink: 0;
+}
+
+.skill-toggle.active .chevron {
+  transform: rotate(180deg);
+}
+
+.skill-content {
+  display: none;
+  margin-top: 0.75rem;
+}
+
+.skill-content.show {
+  display: block;
 }
 
 .form-cards {

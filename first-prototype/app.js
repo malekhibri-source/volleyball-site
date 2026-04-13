@@ -102,6 +102,7 @@
     { title: "Spiking (Partner)", url: "https://www.youtube.com/watch?v=ZK4lqv5NxXA", skill: "spiking", creator: "Wicked Volleyball" },
     { title: "Spike Approach", url: "https://www.youtube.com/watch?v=EpmR0edNOgo", skill: "spiking", creator: "Coach Chijo" },
     { title: "Spiking Footwork", url: "https://www.youtube.com/watch?v=B7vbjJ2wQQQ", skill: "spiking", creator: "Elevate Yourself" },
+    { title: "Tip & Roll / Cut Shot", url: "https://www.youtube.com/watch?v=jnEA9sV834s", skill: "spiking", creator: "Elevate Yourself" },
     { title: "Serve Drills", url: "https://www.youtube.com/shorts/xJfOgw1dMWM", skill: "serving", creator: "Coach Chijo" },
     { title: "Jump Serve Drills", url: "https://www.youtube.com/watch?v=rKoCO5tIPg8", skill: "serving", creator: "Elevate Yourself" },
     { title: "Float Serve", url: "https://www.youtube.com/watch?v=eg0Yx8VI-ek&t=431s", skill: "serving", creator: "Elevate Yourself" },
@@ -381,6 +382,8 @@
       savePositionSettings();
       renderDashboard();
       updateFormVisibility();
+      renderDrillsBySkill();
+      renderVideosBySkill();
       console.log('[DEBUG] Finished applyPositionSkills');
     }, 10);
   }
@@ -411,37 +414,132 @@
   }
 
   function renderDrillsBySkill() {
-    const skills = ["passing", "serving", "spiking", "setting"];
-    skills.forEach(skill => {
-      const container = document.getElementById("drills-" + skill);
-      if (!container) return;
+    const container = document.getElementById("drills-grid");
+    if (!container) return;
+    
+    const settings = {
+      passing: document.getElementById("pos-passing").checked,
+      serving: document.getElementById("pos-serving").checked,
+      spiking: document.getElementById("pos-spiking").checked,
+      setting: document.getElementById("pos-setting").checked
+    };
+
+    const skillOrder = ["passing", "serving", "spiking", "setting"];
+    const skillIcons = {
+      passing: "vb-net.svg",
+      serving: "vb-serve.svg",
+      spiking: "vb-spike.svg",
+      setting: "vb-net.svg"
+    };
+    const skillLabels = {
+      passing: "Passing",
+      serving: "Serving",
+      spiking: "Spiking",
+      setting: "Setting"
+    };
+
+    let html = "";
+    skillOrder.forEach(skill => {
+      if (!settings[skill]) return;
       const drills = drillsDB.filter(d => d.skill === skill);
-      if (drills.length === 0) {
-        container.innerHTML = "<li>No drills available</li>";
-        return;
-      }
-      container.innerHTML = drills.map(d => `
-        <li>
-          <span class="drill-name">${d.name}</span>
-          <span class="drill-meta">${d.difficulty} | ${d.tools.join(", ")}</span>
-        </li>
-      `).join("");
+      const content = drills.length === 0 
+        ? "<li>No drills available</li>"
+        : drills.map(d => `
+          <li>
+            <span class="drill-name">${d.name}</span>
+            <span class="drill-meta">${d.difficulty} | ${d.tools.join(", ")}</span>
+          </li>
+        `).join("");
+
+      html += `
+        <article class="improvement-card">
+          <button class="skill-toggle" data-skill="${skill}">
+            <img src="${skillIcons[skill]}" alt="${skillLabels[skill]}" class="skill-icon" />
+            ${skillLabels[skill]}
+            <span class="chevron">▼</span>
+          </button>
+          <div class="skill-content" id="drills-content-${skill}">
+            <ul class="video-list">${content}</ul>
+          </div>
+        </article>
+      `;
     });
+
+    container.innerHTML = html;
+    setupSkillAccordion("drills");
   }
 
   function renderVideosBySkill() {
-    const skills = ["passing", "serving", "spiking", "setting"];
-    skills.forEach(skill => {
-      const container = document.getElementById("videos-" + skill);
-      if (!container) return;
+    const container = document.getElementById("videos-grid");
+    if (!container) return;
+    
+    const settings = {
+      passing: document.getElementById("pos-passing").checked,
+      serving: document.getElementById("pos-serving").checked,
+      spiking: document.getElementById("pos-spiking").checked,
+      setting: document.getElementById("pos-setting").checked
+    };
+
+    const skillOrder = ["passing", "serving", "spiking", "setting"];
+    const skillIcons = {
+      passing: "vb-net.svg",
+      serving: "vb-serve.svg",
+      spiking: "vb-spike.svg",
+      setting: "vb-net.svg"
+    };
+    const skillLabels = {
+      passing: "Passing",
+      serving: "Serving",
+      spiking: "Spiking",
+      setting: "Setting"
+    };
+
+    let html = "";
+    skillOrder.forEach(skill => {
+      if (!settings[skill]) return;
       const videos = videosDB.filter(v => v.skill === skill);
-      if (videos.length === 0) {
-        container.innerHTML = "<li>No videos available</li>";
-        return;
-      }
-      container.innerHTML = videos.map(v => `
-        <li><a href="${v.url}" target="_blank"><span class="play-icon">▶</span> ${v.title}</a></li>
-      `).join("");
+      const content = videos.length === 0
+        ? "<li>No videos available</li>"
+        : videos.map(v => `
+          <li><a href="${v.url}" target="_blank"><span class="play-icon">▶</span> ${v.title}</a></li>
+        `).join("");
+
+      html += `
+        <article class="improvement-card">
+          <button class="skill-toggle" data-skill="${skill}">
+            <img src="${skillIcons[skill]}" alt="${skillLabels[skill]}" class="skill-icon" />
+            ${skillLabels[skill]}
+            <span class="chevron">▼</span>
+          </button>
+          <div class="skill-content" id="videos-content-${skill}">
+            <ul class="video-list">${content}</ul>
+          </div>
+        </article>
+      `;
+    });
+
+    container.innerHTML = html;
+    setupSkillAccordion("videos");
+  }
+
+  function setupSkillAccordion(section) {
+    const toggles = document.querySelectorAll(`#${section}-grid .skill-toggle`);
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", function() {
+        const skill = this.dataset.skill;
+        const content = document.getElementById(`${section}-content-${skill}`);
+        const isActive = this.classList.contains("active");
+
+        document.querySelectorAll(`#${section}-grid .skill-toggle`).forEach(t => {
+          t.classList.remove("active");
+          document.getElementById(`${section}-content-${t.dataset.skill}`).classList.remove("show");
+        });
+
+        if (!isActive) {
+          this.classList.add("active");
+          content.classList.add("show");
+        }
+      });
     });
   }
 
@@ -450,11 +548,11 @@
     document.getElementById("training-form").addEventListener("submit", handleTrainingSubmit);
     document.getElementById("add-drill-btn").addEventListener("click", handleAddDrill);
 
-    document.getElementById("pos-serving").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
-    document.getElementById("pos-spiking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
-    document.getElementById("pos-passing").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
-    document.getElementById("pos-setting").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
-    document.getElementById("pos-blocking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); });
+    document.getElementById("pos-serving").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); renderDrillsBySkill(); renderVideosBySkill(); });
+    document.getElementById("pos-spiking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); renderDrillsBySkill(); renderVideosBySkill(); });
+    document.getElementById("pos-passing").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); renderDrillsBySkill(); renderVideosBySkill(); });
+    document.getElementById("pos-setting").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); renderDrillsBySkill(); renderVideosBySkill(); });
+    document.getElementById("pos-blocking").addEventListener("change", () => { savePositionSettings(); renderDashboard(); updateFormVisibility(); renderDrillsBySkill(); renderVideosBySkill(); });
 
     document.getElementById("position-select").addEventListener("change", function() {
       const position = this.value;
